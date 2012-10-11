@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CP=
+for i in `ls $DCI_HOME/libs/*.jar`
+do
+  CP=${CP}:${i}
+done
+CP=${CP}:$DCI_HOME/classes/
+
+java -cp ${CP}  \
+ br.usp.each.dci.RequirementCoverageReader $*
