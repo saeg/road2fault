@@ -20,6 +20,7 @@ public class MethodCallTripleRequirementCoverage implements Comparable<MethodCal
 	private int c_e_p= 0;
 	private int c_n_p = 0;
 	private double suspicious= 0;
+	private int absolutePosition = 0;
 
 	public MethodCallTripleRequirementCoverage(int num_testcase)
 	{
@@ -118,6 +119,10 @@ public class MethodCallTripleRequirementCoverage implements Comparable<MethodCal
 		return classNameCalledN2;
 	}
 
+	public int getAbsolutePosition() {
+		return absolutePosition;
+	}
+
 	public void setMethodIdCaller(int methodIdCaller) {
 		this.methodIdCaller = methodIdCaller;
 	}
@@ -155,6 +160,10 @@ public class MethodCallTripleRequirementCoverage implements Comparable<MethodCal
 	}
 
 	
+	public void setAbsolutePosition(int absolutePosition) {
+		this.absolutePosition = absolutePosition;
+	}
+
 	//compare and put in descending order
 	public int compareTo(MethodCallTripleRequirementCoverage reqCoverage)
 	{

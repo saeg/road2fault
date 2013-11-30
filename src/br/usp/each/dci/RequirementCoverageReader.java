@@ -64,6 +64,9 @@ public class RequirementCoverageReader {
     public static HeuristicType heuristicType;
     
     //private
+    public static ListType listType;
+        
+    //private
     public static File classesDirectory;
 	    
     static {
@@ -96,11 +99,19 @@ public class RequirementCoverageReader {
         						 .withDescription("indicate the type of heuristic to be used")
         						 .create("hr");
         
+        @SuppressWarnings("static-access")
+        Option listType = OptionBuilder.withArgName("listtype")
+        						 .withLongOpt("list-type")
+        						 .hasArg()
+        						 .withDescription("type of list returned")
+        						 .create("lt");
+        
         options = new Options();
         options.addOption(path);
         options.addOption(classDir);
         options.addOption(reqType);
         options.addOption(heuristicType);
+        options.addOption(listType);
         formatter = new HelpFormatter();
     }
     private static final ParseException INVALID_FILE_EXCEPTION = new ParseException("read <file> may be a valid file.");
@@ -114,6 +125,7 @@ public class RequirementCoverageReader {
             
             requirementType = selectRequirementType(line.getOptionValue("requirement-type"));
             heuristicType = selectHeuristicType(line.getOptionValue("heuristic-type"));
+            listType = selectListType(line.getOptionValue("list-type"));
             
             try {
             	
@@ -192,10 +204,16 @@ public class RequirementCoverageReader {
 	{
 		 	try {
 		 			byte[] contents;
-			 		//contents = new RequirementCoverageExport(listRequirementsBySuspiciousness,requirementType,heuristicType,classesDirectory).export();
-		 			//contents = new RequirementCoverageExport(hashClasses,requirementType,heuristicType,classesDirectory).export();
-		 			contents = new RequirementCoverageExport(hashClasses,hashPackage,hashPackageSuspicious,hashPackageNumberOfMaxSuspicious,requirementType,heuristicType,classesDirectory).export();
-		            OutputStream os = new FileOutputStream(new File("list_dci_" + requirementType + "_" + heuristicType + ".xml-debug"));
+		 			if(listType == ListType.PACKAGE){
+		 				contents = new RequirementCoverageExport(hashClasses,hashPackage,hashPackageSuspicious,hashPackageNumberOfMaxSuspicious,requirementType,heuristicType,classesDirectory,listType).export();
+			        }else if(listType == ListType.CLASS){
+		 	        	contents = new RequirementCoverageExport(hashClasses,requirementType,heuristicType,classesDirectory,listType).export();
+		 	        }else if(listType == ListType.CSV){
+		 	        	contents = new RequirementCoverageExportCSV(listRequirementsBySuspiciousness,requirementType,heuristicType,classesDirectory,listType).export();
+		 	        }else{
+		 	        	contents = new RequirementCoverageExport(listRequirementsBySuspiciousness,requirementType,heuristicType,classesDirectory,listType).export();
+		 	        }
+			 		OutputStream os = new FileOutputStream(new File("list_dci_" + requirementType + "_" + heuristicType + "_BY_" + listType + (listType == ListType.CSV ? ".csv" : ".xml-debug")));
 		            os.write(contents);
 		            os.close();
 		 	} catch (IOException e) {
@@ -604,6 +622,24 @@ public class RequirementCoverageReader {
 		return type;
 	}
 	
+    //private 
+    public static ListType selectListType(String listType)
+	{
+		ListType type = null;
+		if(listType.equals("requirement")){
+			type = ListType.REQUIREMENT;
+		}
+		if(listType.equals("class")){
+			type = ListType.CLASS;
+		}
+		if(listType.equals("package")){
+			type = ListType.PACKAGE;
+		}
+		if(listType.equals("csv")){
+			type = ListType.CSV;
+		}
+		return type;
+	}
     
     //private 
     public static String getStringRequirement(String requirement)

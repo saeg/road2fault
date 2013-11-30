@@ -8,18 +8,14 @@ public class RequirementCoverage implements Comparable<RequirementCoverage> {
 	private boolean[] coverage;
 	
 	private int c_e_f = 0;
-	
 	private int c_n_f= 0;
-	
 	private int c_e_p= 0;
-	
 	private int c_n_p = 0;
 	
 	private double suspicious= 0; 
-	
 	private int methodId = 0;
-
 	private String className = "";
+	private int absolutePosition = 0;
 	
 	public RequirementCoverage(int num_testcase)
 	{
@@ -106,6 +102,14 @@ public class RequirementCoverage implements Comparable<RequirementCoverage> {
 		this.className = className;
 	}
 	
+	public void setAbsolutePosition(int absolutePosition) {
+		this.absolutePosition = absolutePosition;
+	}
+
+	public int getAbsolutePosition() {
+		return absolutePosition;
+	}
+
 	//compare and put in descending order
 	public int compareTo(RequirementCoverage reqCoverage)
 	{

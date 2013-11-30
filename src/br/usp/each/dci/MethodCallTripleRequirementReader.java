@@ -49,6 +49,9 @@ public class MethodCallTripleRequirementReader {
     //private
     public static HeuristicType heuristicType;
 	
+    //private
+    public static ListType listType;
+    
     private static final ParseException INVALID_FILE_EXCEPTION = new ParseException("read <file> may be a valid file.");
 
     //private
@@ -87,11 +90,19 @@ public class MethodCallTripleRequirementReader {
         						 .withDescription("indicate the type of heuristic to be used")
         						 .create("hr");
         
+        @SuppressWarnings("static-access")
+        Option listType = OptionBuilder.withArgName("listtype")
+        						 .withLongOpt("list-type")
+        						 .hasArg()
+        						 .withDescription("type of list returned")
+        						 .create("lt");
+        
         options = new Options();
         options.addOption(path);
         options.addOption(classDir);
         options.addOption(reqType);
         options.addOption(heuristicType);
+        options.addOption(listType);
         formatter = new HelpFormatter();
     }
 
@@ -104,6 +115,7 @@ public class MethodCallTripleRequirementReader {
             
             requirementType = selectRequirementType(line.getOptionValue("requirement-type"));
             heuristicType = selectHeuristicType(line.getOptionValue("heuristic-type"));
+            listType = selectListType(line.getOptionValue("list-type"));
             
             try {
             	
@@ -177,6 +189,23 @@ public class MethodCallTripleRequirementReader {
         }
     }
 	
+	
+	public static void exportListRequirements()
+	{
+		 	try {
+		 			byte[] contents;
+		 			if(listType == ListType.CSV){
+		 	        	contents = new MethodCallTripleRequirementCoverageExportCSV(listMethodCallRequirement,requirementType,heuristicType,classesDirectory).export();
+		 	        }else{
+		 	        	contents = new MethodCallTripleRequirementCoverageExport(listMethodCallRequirement,requirementType,heuristicType,classesDirectory).export();
+		 	        }
+		            OutputStream os = new FileOutputStream(new File("list_dci_" + "MCT" + "_" + heuristicType + (listType == ListType.CSV ? ".csv" : ".xml-debug")));
+		            os.write(contents);
+		            os.close();
+		 	} catch (IOException e) {
+				e.printStackTrace();
+			}
+	}
 	
 	//a method can be any requirements 
 	public static void createCoverageMatrix(MethodCallTripleRequirementWrapper wrap)
@@ -395,6 +424,24 @@ public class MethodCallTripleRequirementReader {
 		return type;
 	}
 	
+    //private 
+    public static ListType selectListType(String listType)
+	{
+		ListType type = null;
+		if(listType.equals("requirement")){
+			type = ListType.REQUIREMENT;
+		}
+		if(listType.equals("class")){
+			type = ListType.CLASS;
+		}
+		if(listType.equals("package")){
+			type = ListType.PACKAGE;
+		}
+		if(listType.equals("csv")){
+			type = ListType.CSV;
+		}
+		return type;
+	}
     
     //private
     public static void calculateSuspiciousness()
@@ -478,20 +525,6 @@ public class MethodCallTripleRequirementReader {
 		}
 		Collections.sort(listRequirementsBySuspiciousness);
     }
-    
-    
-    public static void exportListRequirements()
-	{
-		 	try {
-		 			byte[] contents;
-		 			contents = new MethodCallTripleRequirementCoverageExport(listMethodCallRequirement,requirementType,heuristicType,classesDirectory).export();
-		            OutputStream os = new FileOutputStream(new File("list_dci_" + "MCT" + "_" + heuristicType + ".xml-debug"));
-		            os.write(contents);
-		            os.close();
-		 	} catch (IOException e) {
-				e.printStackTrace();
-			}
-	}
     
     
     public static void printAllRequirements()

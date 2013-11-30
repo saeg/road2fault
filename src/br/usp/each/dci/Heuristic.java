@@ -37,7 +37,7 @@ public class Heuristic {
 
     	if(cef > 0){
 	    	suspiciousness = (cef)/
-	    					 (double)Math.sqrt((cef + cnf) * (cef + cnp));
+	    					 (double)Math.sqrt((cef + cnf) * (cef + cep));
 	    }
     	return suspiciousness;
 	}

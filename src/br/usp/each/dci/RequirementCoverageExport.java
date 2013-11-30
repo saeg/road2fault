@@ -31,30 +31,34 @@ public class RequirementCoverageExport implements RequirementExport {
 	public Hashtable <String, Integer> hashPackageNumberOfMaxSuspicious;
 	private RequirementType requirementType;
 	private HeuristicType heuristicType;
+	private ListType listType;
 	private File classesDirectory;
 
 
-	public RequirementCoverageExport(List<RequirementCoverage> lstRequirements, RequirementType reqType, HeuristicType heurType, File classDir) {
+	public RequirementCoverageExport(List<RequirementCoverage> lstRequirements, RequirementType reqType, HeuristicType heurType, File classDir, ListType lstType) {
         this.listRequirements = lstRequirements;
         this.requirementType = reqType;
         this.heuristicType = heurType;
+        this.listType = lstType;
         this.classesDirectory = classDir;
     }
 
-	public RequirementCoverageExport(Hashtable<String,Hashtable<Integer,List<RequirementCoverage>>> hshClasses, RequirementType reqType, HeuristicType heurType, File classDir) {
+	public RequirementCoverageExport(Hashtable<String,Hashtable<Integer,List<RequirementCoverage>>> hshClasses, RequirementType reqType, HeuristicType heurType, File classDir, ListType lstType) {
         this.hashClasses = hshClasses;
         this.requirementType = reqType;
         this.heuristicType = heurType;
+        this.listType = lstType;
         this.classesDirectory = classDir;
     }
 
-	public RequirementCoverageExport(Hashtable<String,Hashtable<Integer,List<RequirementCoverage>>> hshClasses, Hashtable <String, List<String>> hshPackage, Hashtable <String, Double> hshPackageSuspicious, Hashtable <String, Integer> hshPackageNumberOfMaxSuspicious, RequirementType reqType, HeuristicType heurType, File classDir) {
+	public RequirementCoverageExport(Hashtable<String,Hashtable<Integer,List<RequirementCoverage>>> hshClasses, Hashtable <String, List<String>> hshPackage, Hashtable <String, Double> hshPackageSuspicious, Hashtable <String, Integer> hshPackageNumberOfMaxSuspicious, RequirementType reqType, HeuristicType heurType, File classDir, ListType lstType) {
         this.hashClasses = hshClasses;
         this.hashPackage = hshPackage;
         this.hashPackageSuspicious = hshPackageSuspicious;
         this.hashPackageNumberOfMaxSuspicious = hshPackageNumberOfMaxSuspicious;
         this.requirementType = reqType;
         this.heuristicType = heurType;
+        this.listType = lstType;
         this.classesDirectory = classDir;
     }
 
@@ -65,17 +69,20 @@ public class RequirementCoverageExport implements RequirementExport {
         Document doc = DocumentHelper.createDocument();
         doc.setXMLEncoding("ISO-8859-1");
         doc.addElement("FaultClassification");
-
-        //doDebugReport(doc);
-        //doDebugReportByClass(doc);
-
-
-		doDebugReportByPackage(doc);
+        
+        if(listType == ListType.PACKAGE){
+        	doDebugReportByPackage(doc);
+        }else if(listType == ListType.CLASS){
+        	doDebugReportByClass(doc);
+        }else{
+        	doDebugReport(doc);
+        }
 
 
         return doc.asXML().getBytes();
 	}
 
+		
 	private void doDebugReport(Document doc) throws ClassFormatException, IOException {
 
 		double tempValue = listRequirements.get(0).getSuspicious();
@@ -226,7 +233,7 @@ public class RequirementCoverageExport implements RequirementExport {
 
     				Element e = el.addElement("method").addAttribute("id", String.valueOf(methodKey))
 					   								   .addAttribute("name", method.getName()+signature)
-    												   .addAttribute("location", lineTable != null && lineTable.getLength() > 0 ? getLineMethodLocation(lineTable.getSourceLine(0)) : "null")
+    												   .addAttribute("location", lineTable != null && lineTable.getLength() > 0 ? getLineMethodLocation(lineTable.getSourceLine(0)) : "1")
     												   .addAttribute("suspicious-value", String.valueOf(methodSuspiciousValue))
     												   .addAttribute("number", String.valueOf(methodNumberOfMaxSuspiciousValue));
 

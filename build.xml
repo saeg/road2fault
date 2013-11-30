@@ -22,9 +22,11 @@
 	<property name="file.log4j.jar" value="${dir.dci.libs}/log4j-1.2.16.jar" />
 	<property name="file.opal.jar" value="${dir.dci.libs}/opal.jar" />
 	<property name="file.bcel.jar" value="${dir.dci.libs}/bcel-5.2.jar" />
+	<property name="file.gj-csv.jar" value="${dir.dci.libs}/gj-csv-1.0.jar" />
 	<property name="file.dci.unit" value="${dir.dci.files}/dci_unit" />
 	<property name="file.dci.mcp" value="${dir.dci.files}/dci_mcp" />
 	<property name="file.dci.mct" value="${dir.dci.files}/dci_mct" />
+	<property name="file.dci.rmcp" value="${dir.dci.files}/dci_rmcp" />
 	<property name="file.dci.jar" value="dci.jar"/>
 	
 	<!--Targets-->
@@ -48,10 +50,12 @@
 		<copy file="${file.inss.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
 		<copy file="${file.log4j.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
 		<copy file="${file.opal.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
+		<copy file="${file.bcel.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
+		<copy file="${file.gj-csv.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
 		<copy file="${file.dci.unit}" todir="${dir.dci.build.bin}" overwrite="true"/>
 		<copy file="${file.dci.mcp}" todir="${dir.dci.build.bin}" overwrite="true"/>
 		<copy file="${file.dci.mct}" todir="${dir.dci.build.bin}" overwrite="true"/>
-		<copy file="${file.bcel.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
+		<copy file="${file.dci.rmcp}" todir="${dir.dci.build.bin}" overwrite="true"/>
 	</target>
 	
 	<target name="compile-dci" depends="make-dir" description="Compiling DCI">
@@ -65,6 +69,7 @@
 				<pathelement path="${file.log4j.jar}"/>
 				<pathelement path="${file.opal.jar}"/>
 				<pathelement path="${file.bcel.jar}"/>
+				<pathelement path="${file.gj-csv.jar}"/>
 			</classpath>
 		</javac>
 	</target>

@@ -16,6 +16,8 @@ public class MethodCallPairRequirementCoverage implements Comparable<MethodCallP
 	private int c_e_p= 0;
 	private int c_n_p = 0;
 	private double suspicious= 0;
+	private int absolutePosition = 0;
+
 
 	public MethodCallPairRequirementCoverage(int num_testcase)
 	{
@@ -102,6 +104,10 @@ public class MethodCallPairRequirementCoverage implements Comparable<MethodCallP
 		return classNameCalled;
 	}
 
+	public int getAbsolutePosition() {
+		return absolutePosition;
+	}
+
 	public void setMethodIdCaller(int methodIdCaller) {
 		this.methodIdCaller = methodIdCaller;
 	}
@@ -124,6 +130,10 @@ public class MethodCallPairRequirementCoverage implements Comparable<MethodCallP
 
 	public void setClassNameCalled(String classNameCalled) {
 		this.classNameCalled = classNameCalled;
+	}
+
+	public void setAbsolutePosition(int absolutePosition) {
+		this.absolutePosition = absolutePosition;
 	}
 
 	//compare and put in descending order
