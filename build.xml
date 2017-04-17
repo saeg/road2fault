@@ -1,65 +1,65 @@
-<project name="dci" basedir="." default="jar-dci">
-	<echo>Building DPBCI</echo>
+<project name="road2fault" basedir="." default="jar-road2fault">
+	<echo>Building ROAD2FAULT</echo>
 	
 	<!--Properties-->
 	<!--Directories-->
-	<property name="dir.dci.bin" value="${basedir}/bin" />
-	<property name="dir.dci.src" value="${basedir}/src" />
-	<property name="dir.dci.libs" value="${basedir}/libs" />
-	<property name="dir.dci.files" value="${basedir}/files" />
-	<property name="dir.dci.test" value="${basedir}/test" />
-	<property name="dir.dci.build" value="${basedir}/build" />
-	<property name="dir.dci.build.jar" value="${dir.dci.build}/jar" />
-	<property name="dir.dci.build.classes" value="${dir.dci.build}/classes" />
-	<property name="dir.dci.build.libs" value="${dir.dci.build}/libs" />
-	<property name="dir.dci.build.bin" value="${dir.dci.build}/bin" />
+	<property name="dir.road2fault.bin" value="${basedir}/bin" />
+	<property name="dir.road2fault.src" value="${basedir}/src" />
+	<property name="dir.road2fault.libs" value="${basedir}/libs" />
+	<property name="dir.road2fault.files" value="${basedir}/files" />
+	<property name="dir.road2fault.test" value="${basedir}/test" />
+	<property name="dir.road2fault.build" value="${basedir}/build" />
+	<property name="dir.road2fault.build.jar" value="${dir.road2fault.build}/jar" />
+	<property name="dir.road2fault.build.classes" value="${dir.road2fault.build}/classes" />
+	<property name="dir.road2fault.build.libs" value="${dir.road2fault.build}/libs" />
+	<property name="dir.road2fault.build.bin" value="${dir.road2fault.build}/bin" />
 	<!--Files-->
-	<property name="file.commons-cli.jar" value="${dir.dci.libs}/commons-cli-1.2.jar" />
-	<property name="file.commons.jar" value="${dir.dci.libs}/commons.jar" />
-	<property name="file.dom4j.jar" value="${dir.dci.libs}/dom4j-1.6.1.jar" />
-	<property name="file.gxl.jar" value="${dir.dci.libs}/gxl.jar" />
-	<property name="file.inss.jar" value="${dir.dci.libs}/inss.jar" />
-	<property name="file.log4j.jar" value="${dir.dci.libs}/log4j-1.2.16.jar" />
-	<property name="file.opal.jar" value="${dir.dci.libs}/opal.jar" />
-	<property name="file.bcel.jar" value="${dir.dci.libs}/bcel-5.2.jar" />
-	<property name="file.gj-csv.jar" value="${dir.dci.libs}/gj-csv-1.0.jar" />
-	<property name="file.dci.unit" value="${dir.dci.files}/dci_unit" />
-	<property name="file.dci.mcp" value="${dir.dci.files}/dci_mcp" />
-	<property name="file.dci.mct" value="${dir.dci.files}/dci_mct" />
-	<property name="file.dci.rmcp" value="${dir.dci.files}/dci_rmcp" />
-	<property name="file.dci.jar" value="dci.jar"/>
+	<property name="file.commons-cli.jar" value="${dir.road2fault.libs}/commons-cli-1.2.jar" />
+	<property name="file.commons.jar" value="${dir.road2fault.libs}/commons.jar" />
+	<property name="file.dom4j.jar" value="${dir.road2fault.libs}/dom4j-1.6.1.jar" />
+	<property name="file.gxl.jar" value="${dir.road2fault.libs}/gxl.jar" />
+	<property name="file.inss.jar" value="${dir.road2fault.libs}/inss.jar" />
+	<property name="file.log4j.jar" value="${dir.road2fault.libs}/log4j-1.2.16.jar" />
+	<property name="file.opal.jar" value="${dir.road2fault.libs}/opal.jar" />
+	<property name="file.bcel.jar" value="${dir.road2fault.libs}/bcel-5.2.jar" />
+	<property name="file.gj-csv.jar" value="${dir.road2fault.libs}/gj-csv-1.0.jar" />
+	<property name="file.road2fault.unit" value="${dir.road2fault.files}/road2fault_unit" />
+	<property name="file.road2fault.mcp" value="${dir.road2fault.files}/road2fault_mcp" />
+	<property name="file.road2fault.mct" value="${dir.road2fault.files}/road2fault_mct" />
+	<property name="file.road2fault.rmcp" value="${dir.road2fault.files}/road2fault_rmcp" />
+	<property name="file.road2fault.jar" value="road2fault.jar"/>
 	
 	<!--Targets-->
 	<target name="clean-build" description="Deleting old build directories">
-		<delete dir="${dir.dci.build}"/>
+		<delete dir="${dir.road2fault.build}"/>
 	</target>
 	
 	<target name="make-dir" depends="clean-build" description="Creating build directories">
-		<mkdir dir="${dir.dci.build}"/>
-		<mkdir dir="${dir.dci.build.bin}"/>
-		<mkdir dir="${dir.dci.build.classes}"/>
-		<mkdir dir="${dir.dci.build.jar}"/>
-		<mkdir dir="${dir.dci.build.libs}"/>
+		<mkdir dir="${dir.road2fault.build}"/>
+		<mkdir dir="${dir.road2fault.build.bin}"/>
+		<mkdir dir="${dir.road2fault.build.classes}"/>
+		<mkdir dir="${dir.road2fault.build.jar}"/>
+		<mkdir dir="${dir.road2fault.build.libs}"/>
 	</target>
 	
 	<target name="copy" depends="make-dir" description="Copy files to build directories">
-		<copy file="${file.commons-cli.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.commons.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.dom4j.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.gxl.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.inss.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.log4j.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.opal.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.bcel.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.gj-csv.jar}" todir="${dir.dci.build.libs}" overwrite="true"/>
-		<copy file="${file.dci.unit}" todir="${dir.dci.build.bin}" overwrite="true"/>
-		<copy file="${file.dci.mcp}" todir="${dir.dci.build.bin}" overwrite="true"/>
-		<copy file="${file.dci.mct}" todir="${dir.dci.build.bin}" overwrite="true"/>
-		<copy file="${file.dci.rmcp}" todir="${dir.dci.build.bin}" overwrite="true"/>
+		<copy file="${file.commons-cli.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.commons.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.dom4j.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.gxl.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.inss.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.log4j.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.opal.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.bcel.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.gj-csv.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.road2fault.unit}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.mcp}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.mct}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.rmcp}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 	</target>
 	
-	<target name="compile-dci" depends="make-dir" description="Compiling DCI">
-		<javac srcdir="${dir.dci.src}" destdir="${dir.dci.build.classes}" debug="true" debuglevel="lines,vars,source">
+	<target name="compile-road2fault" depends="make-dir" description="Compiling Road2Fault">
+		<javac srcdir="${dir.road2fault.src}" destdir="${dir.road2fault.build.classes}" debug="true" debuglevel="lines,vars,source">
 			<classpath> 
 				<pathelement path="${file.commons-cli.jar}"/>
 				<pathelement path="${file.commons.jar}"/>
@@ -74,8 +74,8 @@
 		</javac>
 	</target>
 	
-	<target name="jar-dci" depends="compile-dci,copy">
-		<jar destfile="${dir.dci.build.jar}/${file.dci.jar}" basedir="${dir.dci.build.classes}" />
+	<target name="jar-road2fault" depends="compile-road2fault,copy">
+		<jar destfile="${dir.road2fault.build.jar}/${file.road2fault.jar}" basedir="${dir.road2fault.build.classes}" />
 	</target>
 	
 	<!--Put tests-->

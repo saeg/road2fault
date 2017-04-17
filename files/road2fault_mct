@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CP=
+for i in `ls $ROAD2FAULT_HOME/libs/*.jar`
+do
+  CP=${CP}:${i}
+done
+CP=${CP}:$ROAD2FAULT_HOME/classes/
+
+java -cp ${CP}  \
+ br.usp.each.road2fault.MethodCallTripleRequirementReader $*

@@ -11,6 +11,6 @@
 	<classpathentry kind="lib" path="libs/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="libs/opal.jar"/>
 	<classpathentry kind="lib" path="libs/bcel-5.2.jar"/>
-	<classpathentry kind="lib" path="/home/higor/Dropbox/workspace/dci/libs/gj-csv-1.0.jar"/>
+	<classpathentry kind="lib" path="libs/gj-csv-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
