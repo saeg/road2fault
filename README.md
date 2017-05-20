@@ -9,6 +9,8 @@ Before running Road2Fault, you must run InSS to instrument and collecting spectr
 ### Installing InSS
 
 Get the InSS project, available at https://github.com:higoramario/mis-mcp.git
+
+This version of InSS contains the MCP and MCT strategies. 
 README file has the instructions to compile the project and for its initial settings.
 
 
@@ -99,12 +101,11 @@ The output is a file with the corresponding spectra extension (e.g., package.Tes
 ```bash
 ${ROAD2FAULT_HOME}/bin/road2fault_mcp -r mcpspectra -rt mcp -hr ochiai -c target/classes -lt requirement
 ```
-Set the desired road2fault program to collect spectra data:
-- **road2fault_mcp** for MCP spectra and the MCP roadmap
-- **road2fault_unit** for node, branch or dua spectra
-- **road2fault_mct** for MCT spectra
-- **road2fault_rmcp** for the unit list with method position
-
+- Set the desired road2fault program to collect spectra data:
+..- **road2fault_mcp** for MCP spectra and the MCP roadmap
+..- **road2fault_unit** for node, branch or dua spectra
+..- **road2fault_mct** for MCT spectra
+..- **road2fault_rmcp** for the unit list with method position
 - **-r**: the folder that contains the spectra files
 - **-rt**: type of requirement: mcp, mct, node, branch, or dua 
 - **-hr**: type of heuristic used to calculate the suspiciousness: ochiai, tarantula, drt, jaccard, zoltar, op, minus, kulczynski2, mccon, wong3
@@ -147,7 +148,7 @@ To run the extractor, the report files must be placed in the following structure
 - **program-name**: one folder for each program named with the program's name in lower case
 - **version_fault-name**: one folder containing the *.xml-debug* files for each fault. 
 
-The folder must be named with the version number preceded by letter *v*, and followed by *_* and the fault's description.
+The folder must be named with the version number preceded by letter *v*, and followed by '_' and the fault's description.
 ```
 /home/user/experiments/ant/v1_CLJ_HD_1
 ```
@@ -174,7 +175,7 @@ java -jar ch-icd-ls.jar "/home/user/experiments/"
 
 ### CH-ICD extractor's output:
 
-A csv file (ch-icd-output-fb.csv or ch-icd-output-ls.csv) with the number of blocks and methods inspected until 
+1. A csv file (ch-icd-output-fb.csv or ch-icd-output-ls.csv) with the number of blocks and methods inspected until 
 reach the fault by technique (ICD-LS, CH-LS, ICD-FB, CH-FB, and BL), by effort budget (1 - 100) and by different 
 values for LS (1 - 15) and FB (5 - 100). The file contains the values for each program and fault, and summarized 
 values by program and for all programs using Ochiai and Tarantula.
@@ -182,8 +183,11 @@ The csv files also contain the percentage of examined code to reach the faults.
 We considered the worst case scenario to deal with ties, i.e., all blocks with score equal to the faulty one 
 are included to determine the position of the faulty one block.
 
-The extractor also generates a log file containing all blocks and methods visited for all strategies per program, 
-fault and heuristic.
+2. A log file containing all blocks and methods visited for all strategies per program, 
+fault and heuristic. 
+
+3. Bar plot charts with the results by program and for all programs, comparing CH-FB, ICD-FB, and BL, and also for 
+CH-LS, ICD-LS, and BL. 
 
 ### Other strategies:
 InspectionStrategy: original strategy used in the 1st version of icd. Methods with the same name are included at 
