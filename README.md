@@ -40,14 +40,16 @@ export INSS_HOME=/home/user/apps/mis
 ```bash
 ${INSS_HOME}/bin/instrumenter --instrument ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/instrument/
 ```
-..* **--instrument**: program's class folder
-..* **--dest**: destination folder
+**--instrument**: program's class folder
+
+**--dest**: destination folder
 
 3. Generate the program's data-flow graph
 ```bash
 ${INSS_HOME}/bin/defuse --file ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/gxl/
 ```
 **--file**: program's class folder
+
 **--dest**: destination folder
 
 
