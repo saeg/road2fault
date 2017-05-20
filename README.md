@@ -199,7 +199,7 @@ once in the roadmap, no matter their signatures or classes. The score precision 
 We use 62 bugs in our experiments from the following projects.
 
 | Project | # Faults |
-|---------|----------|
+|---------|---------:|
 | Ant | 18 | 
 | Commons-Math | 20 | 
 | HSQLDB | 4 | 
