@@ -1,65 +1,114 @@
-package br.usp.each.road2fault;
+package br.usp.each.saeg.road2fault;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.bcel.classfile.ClassFormatException;
 import org.apache.bcel.classfile.ClassParser;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+
+import com.generationjava.io.CsvWriter;
 
 import br.usp.each.inss.RequirementExport;
 import br.usp.each.opal.requirement.RequirementType;
 
-public class MethodCallTripleRequirementCoverageExport implements RequirementExport {
+public class MethodCallTripleRequirementCoverageExportCSV implements RequirementExport {
 	
 	private List<MethodCallTripleRequirementCoverage> listRequirements;
 	private RequirementType requirementType;
 	private HeuristicType heuristicType;
 	private File classesDirectory;
+	private ListPosition listPosition;
 	
-	public MethodCallTripleRequirementCoverageExport(List<MethodCallTripleRequirementCoverage> lstRequirements, RequirementType reqType, HeuristicType heurType, File classDir) {
+	public MethodCallTripleRequirementCoverageExportCSV(List<MethodCallTripleRequirementCoverage> lstRequirements, RequirementType reqType, HeuristicType heurType, File classDir) {
         this.listRequirements = lstRequirements;
         this.requirementType = reqType;
         this.heuristicType = heurType;
         this.classesDirectory = classDir;
+        listPosition = new ListPosition();
+        listPosition.insertAbsolutePositionMCT(listRequirements);
     }
-	
 	
 	@Override
 	public byte[] export() throws IOException {
-
-        Document doc = DocumentHelper.createDocument();
-        doc.setXMLEncoding("ISO-8859-1");
-        doc.addElement("FaultClassification-MethodCallTriple");
-
-        doDebugReport(doc);
-        
-        return doc.asXML().getBytes();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		CsvWriter csv = new CsvWriter(new OutputStreamWriter(baos));
+		csv.setFieldDelimiter(';');
+		csv.setBlockDelimiter('\n');
+		
+		doHeader(csv);
+		doDebugReportCSV(csv);
+		doMCTList(csv);
+		
+		csv.close();
+		return baos.toByteArray();
 	}
-
-	private void doDebugReport(Document doc) {
+	
+	private void doHeader(CsvWriter csv) throws IOException {
+		csv.writeField("from-class");
+		csv.writeField("from-method-id");
+		csv.writeField("from-method");
+		csv.writeField("into-class");
+		csv.writeField("into-method-id");
+		csv.writeField("into-method");
+		csv.writeField("to-class");
+		csv.writeField("to-method-id");
+		csv.writeField("to-method");
+		csv.writeField("suspicious");
+		csv.writeField("pos-abs-name");
+		csv.writeField("score-name");
+		csv.writeField("pos-medium");
+		csv.writeField("exam-medium");
+		csv.writeField("pos-min");
+		csv.writeField("exam-min");
+		csv.writeField("pos-max");
+		csv.writeField("exam-max");
+		csv.writeField("count");
+		csv.writeField("ini");
+		csv.writeField("constructor/get");
+		csv.writeField("list");
+		
+		csv.endBlock();
+	}
+	
+	private void doDebugReportCSV(CsvWriter csv) {
         
-		Element element = doc.getRootElement();
-    	element.addAttribute("project", "fault localization");
-    	Element elem = element.addElement("test-criteria").addAttribute("requirement-type", "METHODCALLTRIPLE");
-    	
-    	for(MethodCallTripleRequirementCoverage reqCoverage : listRequirements)
+		for(MethodCallTripleRequirementCoverage reqCoverage : listRequirements)
     	{
     		try
     		{
 	    		getRequirementWithMethodName(reqCoverage);
-	    		elem.addElement("triple").addAttribute("from-method", reqCoverage.getMethodIdCaller()+": "+reqCoverage.getMethodNameCaller())
-									   .addAttribute("from-class", reqCoverage.getClassNameCaller())
-									   .addAttribute("into-method", reqCoverage.getMethodIdCalledN1()+": "+reqCoverage.getMethodNameCalledN1())
-									   .addAttribute("into-class", reqCoverage.getClassNameCalledN1())
-									   .addAttribute("to-method", reqCoverage.getMethodIdCalledN2()+": "+reqCoverage.getMethodNameCalledN2())
-									   .addAttribute("to-class", reqCoverage.getClassNameCalledN2())
-									   .addAttribute("suspicious",String.valueOf(reqCoverage.getSuspicious()));
+	    		csv.writeField(reqCoverage.getClassNameCaller());
+	    		csv.writeField(String.valueOf(reqCoverage.getMethodIdCaller()));
+	    		csv.writeField(reqCoverage.getMethodNameCaller());
+	    		csv.writeField(reqCoverage.getClassNameCalledN1());
+	    		csv.writeField(String.valueOf(reqCoverage.getMethodIdCalledN1()));
+	    		csv.writeField(reqCoverage.getMethodNameCalledN1());
+	    		csv.writeField(reqCoverage.getClassNameCalledN2());
+	    		csv.writeField(String.valueOf(reqCoverage.getMethodIdCalledN2()));
+	    		csv.writeField(reqCoverage.getMethodNameCalledN2());
+	    		csv.writeField(String.valueOf(reqCoverage.getSuspicious()));
+	    		csv.writeField(String.valueOf(reqCoverage.getAbsolutePosition()));
+	    		csv.writeField(String.valueOf((double)reqCoverage.getAbsolutePosition()/listRequirements.size()));
+	    		csv.writeField(String.valueOf(listPosition.getMediumPosition(reqCoverage.getSuspicious())));
+	    		csv.writeField(String.valueOf(listPosition.getMediumEXAMScore(reqCoverage.getSuspicious(), listRequirements.size())));
+	    		csv.writeField(String.valueOf(listPosition.getMinPosition(reqCoverage.getSuspicious())));
+	    		csv.writeField(String.valueOf(listPosition.getMinEXAMScore(reqCoverage.getSuspicious(), listRequirements.size())));
+	    		csv.writeField(String.valueOf(listPosition.getMaxPosition(reqCoverage.getSuspicious())));
+	    		csv.writeField(String.valueOf(listPosition.getMaxEXAMScore(reqCoverage.getSuspicious(), listRequirements.size())));
+	    		csv.writeField("count");
+	    		csv.writeField("ini");
+	    		csv.writeField("constructor/get");
+	    		csv.writeField("list");
+	    		csv.endBlock();
     		}
     		catch(IOException io)
     		{
@@ -68,6 +117,34 @@ public class MethodCallTripleRequirementCoverageExport implements RequirementExp
   	    }
     	
     }
+	
+	private void doMCTList(CsvWriter csv){
+		Map<String,Double> mapMCT = listPosition.getMCTMethodList(listRequirements);
+		
+		try {
+			csv.writeField("");
+			csv.endBlock();
+			csv.writeField("List_of_MCT_methods");
+			csv.writeField("suspicious");
+			csv.endBlock();
+			
+			Set<String> setMethod = mapMCT.keySet();
+			
+			for(String mcpMethodName : setMethod)
+			{
+				csv.writeField(mcpMethodName);
+				csv.writeField(String.valueOf(mapMCT.get(mcpMethodName)));
+				csv.endBlock();
+			}
+			
+			csv.writeField("TOTAL_METHODS");
+			csv.writeField(String.valueOf(mapMCT.size()));
+			
+		}
+		catch (IOException e) {
+			System.out.println("An error occurs creating csv file.");
+		}
+	}
 	
 	//Includes the name of methods in output.
 	private void getRequirementWithMethodName(MethodCallTripleRequirementCoverage reqCoverage) throws ClassFormatException, IOException
@@ -192,5 +269,5 @@ public class MethodCallTripleRequirementCoverageExport implements RequirementExp
     	}
     	return "";
     }
-    
+
 }

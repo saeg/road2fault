@@ -19,8 +19,8 @@ import org.junit.Test;
 import br.usp.each.inss.RequirementWrapper;
 import br.usp.each.inss.cache.Requirements;
 import br.usp.each.opal.requirement.RequirementType;
-import br.usp.each.road2fault.RequirementCoverage;
-import br.usp.each.road2fault.RequirementCoverageReader;
+import br.usp.each.saeg.road2fault.RequirementCoverage;
+import br.usp.each.saeg.road2fault.RequirementCoverageReader;
 
 public class TestRequirementCoverageReader extends TestCase {
 

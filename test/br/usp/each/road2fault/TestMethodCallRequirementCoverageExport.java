@@ -9,9 +9,9 @@ import java.util.List;
 import org.junit.Test;
 
 import br.usp.each.opal.requirement.RequirementType;
-import br.usp.each.road2fault.HeuristicType;
-import br.usp.each.road2fault.MethodCallTripleRequirementCoverage;
-import br.usp.each.road2fault.MethodCallTripleRequirementCoverageExport;
+import br.usp.each.saeg.road2fault.HeuristicType;
+import br.usp.each.saeg.road2fault.MethodCallTripleRequirementCoverage;
+import br.usp.each.saeg.road2fault.MethodCallTripleRequirementCoverageExport;
 
 public class TestMethodCallRequirementCoverageExport {
 

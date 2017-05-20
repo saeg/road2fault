@@ -1,4 +1,4 @@
-package br.usp.each.road2fault;
+package br.usp.each.saeg.road2fault;
 
 public class RequirementCoverage implements Comparable<RequirementCoverage> {
 	

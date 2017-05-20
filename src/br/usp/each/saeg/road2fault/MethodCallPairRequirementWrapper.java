@@ -1,4 +1,4 @@
-package br.usp.each.road2fault;
+package br.usp.each.saeg.road2fault;
 
 import java.util.ArrayList;
 import java.util.List;

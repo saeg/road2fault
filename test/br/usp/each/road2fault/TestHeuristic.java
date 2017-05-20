@@ -7,8 +7,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.usp.each.road2fault.Heuristic;
-import br.usp.each.road2fault.RequirementCoverage;
+import br.usp.each.saeg.road2fault.Heuristic;
+import br.usp.each.saeg.road2fault.RequirementCoverage;
 
 public class TestHeuristic {
 
