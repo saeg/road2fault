@@ -26,7 +26,7 @@ export ROAD2FAULT_HOME=/home/user/apps/road2fault/build
    
 3. Give execution permissions for the files in the '$ROAD2FAULT_HOME/bin' folder
 ```bash
-sudo chmod +x road2fault_unit road2fault_rmcp
+sudo chmod +x road2fault_unit road2fault_mcp road2fault_mct road2fault_rmcp
 ```
 
 ## Instrumenting and creating data-flow graphs with InSS:
@@ -40,8 +40,8 @@ export INSS_HOME=/home/user/apps/mis
 ```bash
 ${INSS_HOME}/bin/instrumenter --instrument ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/instrument/
 ```
-**--instrument**: program's class folder
-**--dest**: destination folder
+..* **--instrument**: program's class folder
+..* **--dest**: destination folder
 
 3. Generate the program's data-flow graph
 ```bash
@@ -191,9 +191,10 @@ name are included at once in th roadmap, no matter their signatures or classes. 
 @article{
 	title={Contextualizing Spectrum-based Fault Localization},
 	author={Higor A. de Souza and Danilo Mutti and Marcos L. Chaim and Fabio Kon},
-	journal={Information and Software Technology},
+	journal={},
 	year={},
 	pages={},
-	year={2017}
+	year={2017},
+	note={submitted to Information and Software Technology}
 }
 ```
