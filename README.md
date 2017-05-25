@@ -116,22 +116,28 @@ ${ROAD2FAULT_HOME}/bin/road2fault_mcp -r mcpspectra -rt mcp -hr ochiai -c ${PROG
 - **-rt**: type of requirement: mcp, mct, node, branch, or dua 
 - **-hr**: type of heuristic used to calculate the suspiciousness: ochiai, tarantula, drt, jaccard, zoltar, op, minus, kulczynski2, mccon, wong3
 - **-c**: path of the original classes of the subject program
-- **-lt**: type of list: requirement or csv for mcp or mct spectra; requirement, classes, packages or csv for node, branch or dua spectra
+- **-lt**: type of list: requirement or csv for mcp or mct spectra; requirement, class, package or csv for node, branch or dua spectra
 
 The output is an XML suspiciousness list organized by requirement, classes, or packages. The csv options generates the suspiciousness list in the csv format.
+To run Road2Fault, it is necessary to remove files which the extension finish with '*-out'. These files contain the junit's output information and must not be processed by Road2Fault.
 
 2. To generate the new unit list with the method position attribute, run:
 ```bash
-$ROAD2FAULT_HOME/bin/road2fault_rmcp -uf list_dci_NODE_TARANTULA_BY_PACKAGE.xml -rf list_dci_RMCP_TARANTULA.xml
+$ROAD2FAULT_HOME/bin/road2fault_rmcp -uf list_dci_NODE_TARANTULA_BY_PACKAGE.xml-debug -rf list_dci_RMCP_TARANTULA.xml-debug
 ```
 - **-uf**: previous unit list created by the 'road2fault_unit' program 
 - **-rf**: roadmap
 
+The position attribute was included for using in CodeForest.
 
-# CH-ICD results extractor
+# Filtering Strategies Calculator
 
-Road2Fault also extracts the effectiveness results of debugging filtering strategies from the xml report files (.xml-debug extension).
-The tool generates the results in csv files and charts. It also generates log files to check if the strategies are working well.
+Road2Fault extracts the fault localization results of debugging filtering strategies from the suspiciousness lists (.xml-debug extension).
+The tool generates the results in csv files and also the log files to check if the strategies are working well.
+It is also possible to plot bar charts with the results.
+
+Currently, it is possible to extract results only for the faults used in the dataset we used in our experiment.  New faults can be added 
+following the structure of **BatchExecutor**, since the faulty sites must be informed to calculate the results. 
 
 ## Current strategies
 
@@ -145,12 +151,12 @@ This strategy gets each score from a method, at most 15 score levels.
    score is used to inspect the blocks inside the methods indicated by the roadmap. 
    If the 1st score (highest) contains more blocks than the budget, such score is returned.
 
-## Folder structure:
+## Folder structure
 To run the extractor, the report files must be placed in the following structure: 
 ```
 /home/user/experiments/{program-name}/{version_fault-name}
 ```
-- **/home/user/experiments**: your local folder that contains the report files of all programs
+- **/home/user/experiments**: your local folder that contains the report files of all programs. 
 - **program-name**: one folder for each program named with the program's name in lower case
 - **version_fault-name**: one folder containing the *.xml-debug* files for each fault. 
 
@@ -166,20 +172,20 @@ Three report files for each heuristic are needed to execute extract the results:
 - list_dci_NODE_OCHIAI_BY_REQUIREMENT.xml-debug
 
 In case of Tarantula, the files has the description TARANTULA instead of OCHIAI.
-The report files of both heuristics must be inside the folder.
+The report files of all 62 faults from both heuristics must be inside the folder to execute the extractor.
 
-## Running the CH-ICD extractor from command line
+## Running the Filtering Strategies Calculator from command line
 
 1. There are two versions of the extractor: 
-- **ch-icd-ls.jar**: Extract the results for the LS strategy 
-- **ch-icd-fb.jar**: Extract the results for the FB strategy
+- **ch-icd-ls.jar**: Extract the results for the LS strategy, available [here](https://drive.google.com/open?id=0B2Vc3U9nBKO_TG44STZRdE9vdVU)
+- **ch-icd-fb.jar**: Extract the results for the FB strategy, available [here](https://drive.google.com/open?id=0B2Vc3U9nBKO_Q1V3VmFpM25IRkU)
 
 For both jars you must pass the path to the root folder that contains the report files.
 ```bash
 java -jar ch-icd-ls.jar "/home/user/experiments/"
 ```
 
-### CH-ICD extractor's output:
+### Filtering Strategies Calculator's output:
 
 1. A csv file (ch-icd-output-fb.csv or ch-icd-output-ls.csv) with the number of blocks and methods inspected until 
 reach the fault by technique (ICD-LS, CH-LS, ICD-FB, CH-FB, and BL), by effort budget (1 - 100) and by different 

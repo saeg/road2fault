@@ -23,6 +23,18 @@
 	<property name="file.opal.jar" value="${dir.road2fault.libs}/opal.jar" />
 	<property name="file.bcel.jar" value="${dir.road2fault.libs}/bcel-5.2.jar" />
 	<property name="file.gj-csv.jar" value="${dir.road2fault.libs}/gj-csv-1.0.jar" />
+	<property name="file.commons-lang3.jar" value="${dir.road2fault.libs}/commons-lang3-3.4.jar" />
+	<property name="file.hamcrest-core.jar" value="${dir.road2fault.libs}/hamcrest-core-1.3.jar" />
+	<property name="file.jcommon.jar" value="${dir.road2fault.libs}/jcommon-1.0.23.jar" />
+	<property name="file.jfreechart.jar" value="${dir.road2fault.libs}/jfreechart-1.0.19.jar" />
+	<property name="file.jfreechart-experimental.jar" value="${dir.road2fault.libs}/jfreechart-1.0.19-experimental.jar" />
+	<property name="file.jfreechart-swt.jar" value="${dir.road2fault.libs}/jfreechart-1.0.19-swt.jar" />
+	<property name="file.jfreesvg.jar" value="${dir.road2fault.libs}/jfreesvg-2.0.jar" />
+	<property name="file.junit4.jar" value="${dir.road2fault.libs}/junit-4.11.jar" />
+	<property name="file.orsoncharts.jar" value="${dir.road2fault.libs}/orsoncharts-1.4-eval-nofx.jar" />
+	<property name="file.orsonpdf.jar" value="${dir.road2fault.libs}/orsonpdf-1.6-eval.jar" />
+	<property name="file.servlet.jar" value="${dir.road2fault.libs}/servlet.jar" />
+	<property name="file.swtgraphics2d.jar" value="${dir.road2fault.libs}/swtgraphics2d.jar" />
 	<property name="file.road2fault.unit" value="${dir.road2fault.files}/road2fault_unit" />
 	<property name="file.road2fault.mcp" value="${dir.road2fault.files}/road2fault_mcp" />
 	<property name="file.road2fault.mct" value="${dir.road2fault.files}/road2fault_mct" />
@@ -52,6 +64,18 @@
 		<copy file="${file.opal.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
 		<copy file="${file.bcel.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
 		<copy file="${file.gj-csv.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.commons-lang3.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.hamcrest-core.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.jcommon.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.jfreechart.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.jfreechart-experimental.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.jfreechart-swt.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.jfreesvg.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.junit4.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.orsoncharts.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.orsonpdf.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.servlet.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
+		<copy file="${file.swtgraphics2d.jar}" todir="${dir.road2fault.build.libs}" overwrite="true"/>
 		<copy file="${file.road2fault.unit}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 		<copy file="${file.road2fault.mcp}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 		<copy file="${file.road2fault.mct}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
@@ -70,6 +94,18 @@
 				<pathelement path="${file.opal.jar}"/>
 				<pathelement path="${file.bcel.jar}"/>
 				<pathelement path="${file.gj-csv.jar}"/>
+				<pathelement path="${file.commons-lang3.jar}"/>
+				<pathelement path="${file.hamcrest-core.jar}"/>
+				<pathelement path="${file.jcommon.jar}"/>
+				<pathelement path="${file.jfreechart.jar}"/>
+				<pathelement path="${file.jfreechart-experimental.jar}"/>
+				<pathelement path="${file.jfreechart-swt.jar}"/>
+				<pathelement path="${file.jfreesvg.jar}"/>
+				<pathelement path="${file.junit4.jar}"/>
+				<pathelement path="${file.orsoncharts.jar}"/>
+				<pathelement path="${file.orsonpdf.jar}"/>
+				<pathelement path="${file.servlet.jar}"/>
+				<pathelement path="${file.swtgraphics2d.jar}"/>
 			</classpath>
 		</javac>
 	</target>

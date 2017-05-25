@@ -8,4 +8,4 @@ done
 CP=${CP}:$ROAD2FAULT_HOME/classes/
 
 java -cp ${CP}  \
- br.usp.each.road2fault.MethodCallPairRequirementReader $*
+ br.usp.each.saeg.road2fault.MethodCallPairRequirementReader $*
