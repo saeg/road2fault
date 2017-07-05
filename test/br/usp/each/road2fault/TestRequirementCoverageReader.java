@@ -16,8 +16,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.usp.each.inss.ClassRequirementWrapper;
+import br.usp.each.inss.MethodRequirementWrapper;
 import br.usp.each.inss.RequirementWrapper;
 import br.usp.each.inss.cache.Requirements;
+import br.usp.each.opal.requirement.Node;
+import br.usp.each.opal.requirement.Requirement;
 import br.usp.each.opal.requirement.RequirementType;
 import br.usp.each.saeg.road2fault.RequirementCoverage;
 import br.usp.each.saeg.road2fault.RequirementCoverageReader;
@@ -267,6 +271,32 @@ public class TestRequirementCoverageReader extends TestCase {
 	@Test
 	public void testFillPackages() {
 		reqTest.fillPackages();
+	}
+	
+	@Test
+	public void testReadingCoverageFile() {
+		RequirementWrapper wrapper = new RequirementWrapper();
+		File file = new File("example/node-scimark2");
+		try{
+			FileInputStream fileIn = new FileInputStream(file);
+	        ObjectInputStream in = new ObjectInputStream(fileIn);
+	        Requirements requirements = (Requirements) in.readObject();
+	        RequirementWrapper.load(requirements, wrapper);
+	        	        
+	        for(ClassRequirementWrapper classWrapper : wrapper.getClasses()){
+	        	for(MethodRequirementWrapper methodWrapper : classWrapper.getMethods()){
+	        		for(Requirement requirement : methodWrapper.getAllRequirements()){
+	        			Node basicBlock = (Node) requirement;
+	    	        	System.out.println("class:"+classWrapper.getClassName() + ", method id:" + methodWrapper.getMethodId() + ", block id:" + basicBlock.getNode());
+	    	        }
+		        }
+	        }
+	        
+	        assertEquals(1,wrapper.getClasses().size());
+	        	        
+		}
+		catch(Exception ex){System.out.println(ex.getMessage());}
+		
 	}
 	
 

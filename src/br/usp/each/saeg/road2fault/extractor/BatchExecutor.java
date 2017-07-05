@@ -487,6 +487,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.types");
 		faultInfo.setFaultyClass("org.apache.tools.ant.types.CommandlineJava");
 		faultInfo.setFaultyMethod("getCommandline()");
+		faultInfo.setFaultyMethodId(10);
 		faultInfo.setFaultyBlock(7);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -499,6 +500,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.ProjectHelper");
 		faultInfo.setFaultyMethod("parse()");
+		faultInfo.setFaultyMethodId(2);
 		faultInfo.setFaultyBlock(68);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -511,6 +513,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.types");
 		faultInfo.setFaultyClass("org.apache.tools.ant.types.CommandlineJava");
 		faultInfo.setFaultyMethod("getCommandline()");
+		faultInfo.setFaultyMethodId(12);
 		faultInfo.setFaultyBlock(42);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -523,6 +526,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.ProjectHelper$TargetHandler");
 		faultInfo.setFaultyMethod("startElement(String,AttributeList)");
+		faultInfo.setFaultyMethodId(2);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -535,6 +539,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.Target");
 		faultInfo.setFaultyMethod("setDepends(String)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(7);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -547,6 +552,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.Target");
 		faultInfo.setFaultyMethod("setDepends(String)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(92);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -559,6 +565,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.util");
 		faultInfo.setFaultyClass("org.apache.tools.ant.util.DOMElementWriter");
 		faultInfo.setFaultyMethod("isLegalCharacter(char)");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(20);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -571,6 +578,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.types");
 		faultInfo.setFaultyClass("org.apache.tools.ant.types.EnumeratedAttribute");
 		faultInfo.setFaultyMethod("setValue(String)");
+		faultInfo.setFaultyMethodId(2);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -583,6 +591,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.util");
 		faultInfo.setFaultyClass("org.apache.tools.ant.util.FileUtils");
 		faultInfo.setFaultyMethod("getParentFile(File)");
+		faultInfo.setFaultyMethodId(21);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -595,6 +604,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.util");
 		faultInfo.setFaultyClass("org.apache.tools.ant.util.SourceFileScanner");
 		faultInfo.setFaultyMethod("restrict(String[],File,File,FileNameMapper)");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(113);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -607,6 +617,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.util");
 		faultInfo.setFaultyClass("org.apache.tools.ant.util.DOMElementWriter");
 		faultInfo.setFaultyMethod("encodedata(String)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(67);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -619,6 +630,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.taskdefs");
 		faultInfo.setFaultyClass("org.apache.tools.ant.taskdefs.ManifestTask");
 		faultInfo.setFaultyMethod("execute()");
+		faultInfo.setFaultyMethodId(5);
 		faultInfo.setFaultyBlock(41);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -631,6 +643,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.taskdefs");
 		faultInfo.setFaultyClass("org.apache.tools.ant.taskdefs.Manifest");
 		faultInfo.setFaultyMethod("getDefaultManifest()");
+		faultInfo.setFaultyMethodId(0);
 		faultInfo.setFaultyBlock(60);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -643,6 +656,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.Project");
 		faultInfo.setFaultyMethod("addReference(String,Object)");
+		faultInfo.setFaultyMethodId(75);
 		faultInfo.setFaultyBlock(31);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -655,6 +669,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.taskdefs");
 		faultInfo.setFaultyClass("org.apache.tools.ant.taskdefs.ManifestTask");
 		faultInfo.setFaultyMethod("execute()");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(41);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -667,6 +682,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant");
 		faultInfo.setFaultyClass("org.apache.tools.ant.AntClassLoader");
 		faultInfo.setFaultyMethod("setClassPath(Path)");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(0);//?
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -679,6 +695,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.types.selectors");
 		faultInfo.setFaultyClass("org.apache.tools.ant.types.selectors.SelectorUtils");
 		faultInfo.setFaultyMethod("matchPath(String,String,boolean)");
+		faultInfo.setFaultyMethodId(5);
 		faultInfo.setFaultyBlock(130);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -691,6 +708,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.tools.ant.types");
 		faultInfo.setFaultyClass("org.apache.tools.ant.types.ZipFileSet");
 		faultInfo.setFaultyMethod("setPrefix(String)");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -703,6 +721,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.complex");
 		faultInfo.setFaultyClass("org.apache.commons.math.complex.Complex");
 		faultInfo.setFaultyMethod("multiply(Complex)");
+		faultInfo.setFaultyMethodId(11);
 		faultInfo.setFaultyBlock(18);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -715,6 +734,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.random");
 		faultInfo.setFaultyClass("org.apache.commons.math.random.EmpiricalDistributionImpl");
 		faultInfo.setFaultyMethod("load(URL)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(51);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -727,6 +747,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.fraction");
 		faultInfo.setFaultyClass("org.apache.commons.math.fraction.Fraction");
 		faultInfo.setFaultyMethod("Fraction(double,double,int,int)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -739,6 +760,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.stat.descriptive.moment");
 		faultInfo.setFaultyClass("org.apache.commons.math.stat.descriptive.moment.Mean");
 		faultInfo.setFaultyMethod("evaluate(double[],int,int)");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(10);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -751,6 +773,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.random");
 		faultInfo.setFaultyClass("org.apache.commons.math.random.ValueServer");
 		faultInfo.setFaultyMethod("getNextReplay()");
+		faultInfo.setFaultyMethodId(19);
 		faultInfo.setFaultyBlock(25);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -763,6 +786,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.ode.nonstiff");
 		faultInfo.setFaultyClass("org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator");
 		faultInfo.setFaultyMethod("AdamsBashforthIntegrator(int,double,double,double,double)");
+		faultInfo.setFaultyMethodId(0);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -775,6 +799,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.estimation");
 		faultInfo.setFaultyClass("org.apache.commons.math.estimation.AbstractEstimator");
 		faultInfo.setFaultyMethod("getCovariances(EstimationProblem)");
+		faultInfo.setFaultyMethodId(9);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -787,6 +812,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.linear");
 		faultInfo.setFaultyClass("org.apache.commons.math.linear.CholeskyDecompositionImpl");
 		faultInfo.setFaultyMethod("CholeskyDecompositionImpl(RealMatrix,double,double)");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(207);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -799,6 +825,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.random");
 		faultInfo.setFaultyClass("org.apache.commons.math.random.CorrelatedRandomVectorGenerator");
 		faultInfo.setFaultyMethod("decompose(RealMatrix,double)");
+		faultInfo.setFaultyMethodId(5);
 		faultInfo.setFaultyBlock(539);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -811,6 +838,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.fraction");
 		faultInfo.setFaultyClass("org.apache.commons.math.fraction.Fraction");
 		faultInfo.setFaultyMethod("compareTo(Fraction)");
+		faultInfo.setFaultyMethodId(7);
 		faultInfo.setFaultyBlock(39);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -823,6 +851,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("gcd(int,int)");
+		faultInfo.setFaultyMethodId(17);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -835,6 +864,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("factorial(int)");
+		faultInfo.setFaultyMethodId(14);
 		faultInfo.setFaultyBlock(26);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -847,6 +877,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("binomialCoefficient(int,int)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(58);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -859,6 +890,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("binomialCoefficientLog(int,int)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(66);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -871,6 +903,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("gcd(int,int)");
+		faultInfo.setFaultyMethodId(17);
 		faultInfo.setFaultyBlock(8);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -883,6 +916,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.util");
 		faultInfo.setFaultyClass("org.apache.commons.math.util.MathUtils");
 		faultInfo.setFaultyMethod("equals(double,double,double)");
+		faultInfo.setFaultyMethodId(11);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -895,6 +929,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.analysis.solvers");
 		faultInfo.setFaultyClass("org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils");
 		faultInfo.setFaultyMethod("bracket(UnivariateRealFunction,double,double,double,int)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(174);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -907,6 +942,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.analysis.solvers");
 		faultInfo.setFaultyClass("org.apache.commons.math.analysis.solvers.BrentSolver");
 		faultInfo.setFaultyMethod("solve(UnivariateRealFunction,double,double,double)");
+		faultInfo.setFaultyMethodId(6);
 		faultInfo.setFaultyBlock(109);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -919,6 +955,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.ode.nonstiff");
 		faultInfo.setFaultyClass("org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator");
 		faultInfo.setFaultyMethod("integrate(FirstOrderDifferentialEquations,double,double[],double,double[])");
+		faultInfo.setFaultyMethodId(5);
 		faultInfo.setFaultyBlock(727);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -931,6 +968,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.commons.math.ode.nonstiff");
 		faultInfo.setFaultyClass("org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator");
 		faultInfo.setFaultyMethod("integrate(FirstOrderDifferentialEquations,double,double[],double,double[])");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(578);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -943,6 +981,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.hsqldb.jdbc");
 		faultInfo.setFaultyClass("org.hsqldb.jdbc.JDBCClobFile");
 		faultInfo.setFaultyMethod("length()");
+		faultInfo.setFaultyMethodId(0);
 		faultInfo.setFaultyBlock(11);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -955,6 +994,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.hsqldb");
 		faultInfo.setFaultyClass("org.hsqldb.ExpressionLogical");
 		faultInfo.setFaultyMethod("resolveTypesForComparison(Session,Expression)");
+		faultInfo.setFaultyMethodId(17);
 		faultInfo.setFaultyBlock(840);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -967,6 +1007,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.hsqldb");
 		faultInfo.setFaultyClass("org.hsqldb.QuerySpecification");
 		faultInfo.setFaultyMethod("setAggregateConditions(Session)");
+		faultInfo.setFaultyMethodId(31);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -979,6 +1020,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.hsqldb");
 		faultInfo.setFaultyClass("org.hsqldb.QuerySpecification");
 		faultInfo.setFaultyMethod("setDistinctConditions(Session)");
+		faultInfo.setFaultyMethodId(30);
 		faultInfo.setFaultyBlock(123);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -991,6 +1033,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("de.susebox.java.util");
 		faultInfo.setFaultyClass("de.susebox.java.util.AbstractTokenizer");
 		faultInfo.setFaultyMethod("isKeyword(int,int)");
+		faultInfo.setFaultyMethodId(71);
 		faultInfo.setFaultyBlock(20);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1003,6 +1046,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("de.susebox.java.util");
 		faultInfo.setFaultyClass("de.susebox.java.util.AbstractTokenizer");
 		faultInfo.setFaultyMethod("test4Normal(Token)");
+		faultInfo.setFaultyMethodId(77);
 		faultInfo.setFaultyBlock(82);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1015,6 +1059,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("");
 		faultInfo.setFaultyClass(".ExtIOException");
 		faultInfo.setFaultyMethod("ExtIOException(Throwable,String,Object[])");
+		faultInfo.setFaultyMethodId(0);//not defined in the experiments
 		faultInfo.setFaultyBlock(0);//not defined in the experiments
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1027,6 +1072,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("de.susebox.jtopas");
 		faultInfo.setFaultyClass("de.susebox.jtopas.PluginTokenizer");
 		faultInfo.setFaultyMethod("setSource(TokenizerSource)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(0);//not defined in the experiments
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1039,6 +1085,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("net.sourceforge.pmd");
 		faultInfo.setFaultyClass("net.sourceforge.pmd.RuleViolation");
 		faultInfo.setFaultyMethod("RuleViolation(Rule,RuleContext,SimpleNode,String)");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(431);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1051,6 +1098,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("net.sourceforge.pmd.cpd");
 		faultInfo.setFaultyClass("net.sourceforge.pmd.cpd.XMLRenderer");
 		faultInfo.setFaultyMethod("render(Iterator)");
+		faultInfo.setFaultyMethodId(2);
 		faultInfo.setFaultyBlock(133);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1063,6 +1111,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.implementations");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl");
 		faultInfo.setFaultyMethod("updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(302);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1075,6 +1124,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.helper");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.helper.C14nHelper");
 		faultInfo.setFaultyMethod("namespaceIsAbsolute(String)");
+		faultInfo.setFaultyMethodId(8);
 		faultInfo.setFaultyBlock(42);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1087,6 +1137,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.implementations");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.implementations.Canonicalizer20010315");
 		faultInfo.setFaultyMethod("updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(322);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1099,6 +1150,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.signature");
 		faultInfo.setFaultyClass("org.apache.xml.security.signature.XMLSignatureInput");
 		faultInfo.setFaultyMethod("XMLSignatureInput(Node,CachedXPathAPI)");
+		faultInfo.setFaultyMethodId(4);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1111,6 +1163,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.signature");
 		faultInfo.setFaultyClass("org.apache.xml.security.signature.XMLSignatureInput");
 		faultInfo.setFaultyMethod("getNodeSet()");
+		faultInfo.setFaultyMethodId(8);
 		faultInfo.setFaultyBlock(38);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1123,6 +1176,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.implementations");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl");
 		faultInfo.setFaultyMethod("handleAttributes(Element)");
+		faultInfo.setFaultyMethodId(9);
 		faultInfo.setFaultyBlock(1732);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1135,6 +1189,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.implementations");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.implementations.CanonicalizerBase");
 		faultInfo.setFaultyMethod("getPositionRelativeToDocumentElement(Node)");
+		faultInfo.setFaultyMethodId(3);
 		faultInfo.setFaultyBlock(56);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1147,6 +1202,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.implementations");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.implementations.CanonicalizerBase");
 		faultInfo.setFaultyMethod("outputPItoWriter(ProcessingInstruction)");
+		faultInfo.setFaultyMethodId(8);
 		faultInfo.setFaultyBlock(87);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1159,6 +1215,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.helper");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.helper.C14nHelper");
 		faultInfo.setFaultyMethod("sortAttributes(Object[])");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(63);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1171,6 +1228,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.c14n.helper");
 		faultInfo.setFaultyClass("org.apache.xml.security.c14n.helper.C14nHelper");
 		faultInfo.setFaultyMethod("sortAttributes(Object[])");
+		faultInfo.setFaultyMethodId(1);
 		faultInfo.setFaultyBlock(159);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1183,6 +1241,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.signature");
 		faultInfo.setFaultyClass("org.apache.xml.security.signature.Reference");
 		faultInfo.setFaultyMethod("dereferenceURIandPerformTransforms()");
+		faultInfo.setFaultyMethodId(23);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1195,6 +1254,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.signature");
 		faultInfo.setFaultyClass("org.apache.xml.security.signature.Reference");
 		faultInfo.setFaultyMethod("getDigestValue()");
+		faultInfo.setFaultyMethodId(27);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1207,6 +1267,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("org.apache.xml.security.utils");
 		faultInfo.setFaultyClass("org.apache.xml.security.utils.XMLUtils");
 		faultInfo.setFaultyMethod("getOwnerDocument(Set)");
+		faultInfo.setFaultyMethodId(35);
 		faultInfo.setFaultyBlock(18);
 		faultAnalysis(faultInfo,heuristic);
 	}
@@ -1219,6 +1280,7 @@ public class BatchExecutor {
 		faultInfo.setFaultyPackage("com.thoughtworks.xstream.mapper");
 		faultInfo.setFaultyClass("com.thoughtworks.xstream.mapper.AnnotationMapper");
 		faultInfo.setFaultyMethod("cacheConverter(XStreamConverter,Class)");
+		faultInfo.setFaultyMethodId(18);
 		faultInfo.setFaultyBlock(0);
 		faultAnalysis(faultInfo,heuristic);
 	}

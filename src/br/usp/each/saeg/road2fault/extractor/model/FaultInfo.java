@@ -9,6 +9,7 @@ public class FaultInfo {
 	private String faultyPackage;
 	private String faultyClass;
 	private String faultyMethod;
+	private int faultyMethodId;
 	private int faultyBlock;
 	
 	public String getFilePath() {
@@ -65,6 +66,14 @@ public class FaultInfo {
 
 	public void setFaultyMethod(String faultyMethod) {
 		this.faultyMethod = faultyMethod;
+	}
+
+	public String getFaultyMethodId() {
+		return faultyMethod;
+	}
+
+	public void setFaultyMethodId(int faultyMethodId) {
+		this.faultyMethodId = faultyMethodId;
 	}
 
 	public int getFaultyBlock() {
