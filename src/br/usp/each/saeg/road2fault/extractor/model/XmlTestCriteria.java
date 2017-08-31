@@ -13,7 +13,7 @@ public class XmlTestCriteria {
 	private String heuristicType;
 	private List<XmlPackage> packages;
 	private FaultInfo faultInfo;
-	private FaultInfo multipleFaultInfo;
+	private MultipleFaultInfo multipleFaultInfo;
 	
 	
 	@XmlAttribute(name = "heuristic-type")
@@ -61,7 +61,7 @@ public class XmlTestCriteria {
 	}
 
 	public void setMultipleFaultyInfo(MultipleFaultInfo faultyInfo) {
-		this.faultInfo = multipleFaultInfo;
+		this.multipleFaultInfo = faultyInfo;
 	}
 
 	public void markAsFault(){
@@ -77,12 +77,14 @@ public class XmlTestCriteria {
 	
 	public void markAsMultipleFault(){
 		
-		XmlPackage pkg = getPackageByName(faultInfo.getFaultyPackage());
-		XmlClass clz = pkg.getClassByName(faultInfo.getFaultyClass());
-		XmlMethod method = clz.getMethodByName(faultInfo.getFaultyMethod());
-		method.setFault();
-		XmlBlock block = method.getBlockById(faultInfo.getFaultyBlock());
-		block.setFault();
+		for(int i = 0; i < multipleFaultInfo.getNumberOfFaults();i++){
+			XmlPackage pkg = getPackageByName(multipleFaultInfo.getFaultyPackage(i));
+			XmlClass clz = pkg.getClassByName(multipleFaultInfo.getFaultyClass(i));
+			XmlMethod method = clz.getMethodByName(multipleFaultInfo.getFaultyMethod(i));
+			method.setFault();
+			XmlBlock block = method.getBlockById(multipleFaultInfo.getFaultyBlock(i));
+			block.setFault();
+		}
 		
 	}
 	

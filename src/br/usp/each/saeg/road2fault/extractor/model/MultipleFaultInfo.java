@@ -63,12 +63,20 @@ public class MultipleFaultInfo {
 		this.faultyPackage.add(faultyPackage);
 	}
 
+	public List<String> getFaultyPackages() {
+		return this.faultyPackage;
+	}
+
 	public String getFaultyClass(int index) {
 		return this.faultyClass.get(index);
 	}
 
 	public void setFaultyClass(String faultyClass) {
 		this.faultyClass.add(faultyClass);
+	}
+
+	public List<String> getFaultyClasses() {
+		return this.faultyClass;
 	}
 
 	public String getFaultyMethod(int index) {
@@ -79,12 +87,20 @@ public class MultipleFaultInfo {
 		this.faultyMethod.add(faultyMethod);
 	}
 
+	public List<String> getFaultyMethods() {
+		return this.faultyMethod;
+	}
+
 	public String getFaultyMethodId(int index) {
 		return this.faultyMethod.get(index);
 	}
 
 	public void setFaultyMethodId(int faultyMethodId) {
 		this.faultyMethodId.add(faultyMethodId);
+	}
+
+	public List<Integer> getFaultyMethodIds() {
+		return this.faultyMethodId;
 	}
 
 	public int getFaultyBlock(int index) {
@@ -95,6 +111,10 @@ public class MultipleFaultInfo {
 		this.faultyBlock.add(faultyBlock);
 	}
 	
+	public List<Integer> getFaultyBlocks() {
+		return this.faultyBlock;
+	}
+
 	public int getNumberOfFaults(){
 		return faultyBlock.size();
 	}

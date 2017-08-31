@@ -11,6 +11,7 @@ public class FaultInfo {
 	private String faultyMethod;
 	private int faultyMethodId;
 	private int faultyBlock;
+	private String faultyTag;//the same as faultName for single bug versions
 	
 	public String getFilePath() {
 		return filePath;
@@ -83,4 +84,12 @@ public class FaultInfo {
 	public void setFaultyBlock(int faultyBlock) {
 		this.faultyBlock = faultyBlock;
 	}
+	public String getFaultyTag() {
+		return faultyTag;
+	}
+
+	public void setFaultyTag(String faultyTag) {
+		this.faultyTag = faultyTag;
+	}
+
 }
