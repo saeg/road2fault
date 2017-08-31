@@ -313,185 +313,72 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		checkFaultPosition(TARANTULA,"XML3_01",XML_SECURITY,3,"RF_HD_1","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","getDigestValue()",0);
 		checkFaultPosition(TARANTULA,"XML3_01",XML_SECURITY,3,"XU_HD_2","org.apache.xml.security.utils","org.apache.xml.security.utils.XMLUtils","getOwnerDocument(Set)",18);
 		
-		
-		ant_v1_CLJ_HD_1(TARANTULA);
-		ant_v1_PJH_AK_1(TARANTULA);
-		ant_v2_CDJ_AK_1(TARANTULA);
-		ant_v2_PH_HD_1(TARANTULA);
-		ant_v3_TG_HD_1(TARANTULA);
-		ant_v3_TG_HD_2(TARANTULA);
-		ant_v4_DEW_AK_1(TARANTULA);
-		ant_v4_EA_HD_1(TARANTULA);
-		ant_v4_FLU_AK_1(TARANTULA);
-		ant_v4_SFS_HD_1(TARANTULA);
-		ant_v5_DEW_AK_1(TARANTULA);
-		ant_v5_MNT_AK_1(TARANTULA);
-		ant_v5_MST_AK_1(TARANTULA);
-		ant_v5_PJ_HD_2(TARANTULA);
-		ant_v6_MT_HD_1(TARANTULA);
-		ant_v7_ACL_HD_2(TARANTULA);
-		ant_v7_SLU_AK_1(TARANTULA);
-		ant_v8_ZF_HD_1(TARANTULA);
-		
 		makeBudgetsFB(TARANTULA,ANT);
 		makeHeaderFB();
 		
-		commonsMath_v1_C_AK_1(TARANTULA);
-		commonsMath_v1_EDI_AK_1(TARANTULA);
-		commonsMath_v1_F_AK_1(TARANTULA);
-		commonsMath_v1_M_AK_1(TARANTULA);
-		commonsMath_v1_VS_AK_1(TARANTULA);
-		commonsMath_v2_ABI_AK_1(TARANTULA);
-		commonsMath_v2_AE_AK_1(TARANTULA);
-		commonsMath_v2_CDI_AK_1(TARANTULA);
-		commonsMath_v2_CRVG_AK_1(TARANTULA);
-		commonsMath_v2_F_AK_2(TARANTULA);
-		commonsMath_v2_MU_AK_1(TARANTULA);
-		commonsMath_v2_MU_AK_2(TARANTULA);
-		commonsMath_v2_MU_AK_3(TARANTULA);
-		commonsMath_v2_MU_AK_4(TARANTULA);
-		commonsMath_v2_MU_AK_5(TARANTULA);
-		commonsMath_v2_MU_AK_6(TARANTULA);
-		commonsMath_v2_URSU_AK_1(TARANTULA);
-		commonsMath_v3_BS_AK_1(TARANTULA);
-		commonsMath_v3_ERKI_AK_1(TARANTULA);
-		commonsMath_v3_RKI_AK_1(TARANTULA);
+		//commonsMath_v3_RKI_AK_1(TARANTULA);
 		
 		makeBudgetsFB(TARANTULA,COMMONS_MATH);
 		makeHeaderFB();
 		
-		hsqldb_v1_JDBCCF_AK_1(TARANTULA);
-		hsqldb_v2_EL_AK_1(TARANTULA);
-		hsqldb_v2_QS_AK_1(TARANTULA);
-		hsqldb_v2_QS_AK_2(TARANTULA);
+		//hsqldb_v2_QS_AK_2(TARANTULA);
 		
 		makeBudgetsFB(TARANTULA,HSQLDB);
 		makeHeaderFB();
 		
-		jtopas_v1_FAULT_5(TARANTULA);
-		jtopas_v1_FAULT_6(TARANTULA);
 		//jtopas_v2_FAULT_1(TARANTULA);
-		jtopas_v3_FAULT_4(TARANTULA);
-
+		
 		makeBudgetsFB(TARANTULA,JTOPAS);
 		makeHeaderFB();
 		
-		pmd_v3_RV_AK_1(TARANTULA);
-		pmd_v3_XMLR_AK_1(TARANTULA);
+		//pmd_v3_XMLR_AK_1(TARANTULA);
 
 		makeBudgetsFB(TARANTULA,PMD);
 		makeHeaderFB();
 		
-		xmlSecurity_v1_CE_HD_3(TARANTULA);
-		xmlSecurity_v1_CHP_AK_1(TARANTULA);
-		xmlSecurity_v1_CN2_AK_2(TARANTULA);
-		xmlSecurity_v1_CNC_AK_1(TARANTULA);
-		xmlSecurity_v1_XSI_AK_1(TARANTULA);
-		xmlSecurity_v2_C2E_AK_1(TARANTULA);
-		xmlSecurity_v2_CB_HD_2(TARANTULA);
-		xmlSecurity_v2_CB_HD_3(TARANTULA);
-		xmlSecurity_v2_CH_HD_1(TARANTULA);
-		xmlSecurity_v2_CHP_AK_1(TARANTULA);
-		xmlSecurity_v2_RF_HD_2(TARANTULA);
-		xmlSecurity_v3_RF_HD_1(TARANTULA);
-		xmlSecurity_v3_XU_HD_2(TARANTULA);
+		//xmlSecurity_v3_XU_HD_2(TARANTULA);
 
 		makeBudgetsFB(TARANTULA,XML_SECURITY);
 		makeHeaderFB();
 		
-		xstream_v1_AM_AK_1(TARANTULA);
+		//xstream_v1_AM_AK_1(TARANTULA);
 
 		makeBudgetsFB(TARANTULA,XSTREAM);
 		makeBudgetsFB(TARANTULA,ALL_PROGRAMS);
 		makeHeaderFB();
 		
 				
-		ant_v1_CLJ_HD_1(OCHIAI);
-		ant_v1_PJH_AK_1(OCHIAI);
-		ant_v2_CDJ_AK_1(OCHIAI);
-		ant_v2_PH_HD_1(OCHIAI);
-		ant_v3_TG_HD_1(OCHIAI);
-		ant_v3_TG_HD_2(OCHIAI);
-		ant_v4_DEW_AK_1(OCHIAI);
-		ant_v4_EA_HD_1(OCHIAI);
-		ant_v4_FLU_AK_1(OCHIAI);
-		ant_v4_SFS_HD_1(OCHIAI);
-		ant_v5_DEW_AK_1(OCHIAI);
-		ant_v5_MNT_AK_1(OCHIAI);
-		ant_v5_MST_AK_1(OCHIAI);
-		ant_v5_PJ_HD_2(OCHIAI);
-		ant_v6_MT_HD_1(OCHIAI);
-		ant_v7_ACL_HD_2(OCHIAI);
-		ant_v7_SLU_AK_1(OCHIAI);
-		ant_v8_ZF_HD_1(OCHIAI);
+		//ant_v8_ZF_HD_1(OCHIAI);
 		
 		makeBudgetsFB(OCHIAI,ANT);
 		makeHeaderFB();
 		
-		commonsMath_v1_C_AK_1(OCHIAI);
-		commonsMath_v1_EDI_AK_1(OCHIAI);
-		commonsMath_v1_F_AK_1(OCHIAI);
-		commonsMath_v1_M_AK_1(OCHIAI);
-		commonsMath_v1_VS_AK_1(OCHIAI);
-		commonsMath_v2_ABI_AK_1(OCHIAI);
-		commonsMath_v2_AE_AK_1(OCHIAI);
-		commonsMath_v2_CDI_AK_1(OCHIAI);
-		commonsMath_v2_CRVG_AK_1(OCHIAI);
-		commonsMath_v2_F_AK_2(OCHIAI);
-		commonsMath_v2_MU_AK_1(OCHIAI);
-		commonsMath_v2_MU_AK_2(OCHIAI);
-		commonsMath_v2_MU_AK_3(OCHIAI);
-		commonsMath_v2_MU_AK_4(OCHIAI);
-		commonsMath_v2_MU_AK_5(OCHIAI);
-		commonsMath_v2_MU_AK_6(OCHIAI);
-		commonsMath_v2_URSU_AK_1(OCHIAI);
-		commonsMath_v3_BS_AK_1(OCHIAI);
-		commonsMath_v3_ERKI_AK_1(OCHIAI);
-		commonsMath_v3_RKI_AK_1(OCHIAI);
+		//commonsMath_v3_RKI_AK_1(OCHIAI);
 
 		makeBudgetsFB(OCHIAI,COMMONS_MATH);
 		makeHeaderFB();
 		
-		hsqldb_v1_JDBCCF_AK_1(OCHIAI);
-		hsqldb_v2_EL_AK_1(OCHIAI);
-		hsqldb_v2_QS_AK_1(OCHIAI);
-		hsqldb_v2_QS_AK_2(OCHIAI);
+		//hsqldb_v2_QS_AK_2(OCHIAI);
 
 		makeBudgetsFB(OCHIAI,HSQLDB);
 		makeHeaderFB();
 		
-		jtopas_v1_FAULT_5(OCHIAI);
-		jtopas_v1_FAULT_6(OCHIAI);
 		//jtopas_v2_FAULT_1(OCHIAI);
-		jtopas_v3_FAULT_4(OCHIAI);
-
+		
 		makeBudgetsFB(OCHIAI,JTOPAS);
 		makeHeaderFB();
 		
-		pmd_v3_RV_AK_1(OCHIAI);
-		pmd_v3_XMLR_AK_1(OCHIAI);
+		//pmd_v3_XMLR_AK_1(OCHIAI);
 
 		makeBudgetsFB(OCHIAI,PMD);
 		makeHeaderFB();
 		
-		xmlSecurity_v1_CE_HD_3(OCHIAI);
-		xmlSecurity_v1_CHP_AK_1(OCHIAI);
-		xmlSecurity_v1_CN2_AK_2(OCHIAI);
-		xmlSecurity_v1_CNC_AK_1(OCHIAI);
-		xmlSecurity_v1_XSI_AK_1(OCHIAI);
-		xmlSecurity_v2_C2E_AK_1(OCHIAI);
-		xmlSecurity_v2_CB_HD_2(OCHIAI);
-		xmlSecurity_v2_CB_HD_3(OCHIAI);
-		xmlSecurity_v2_CH_HD_1(OCHIAI);
-		xmlSecurity_v2_CHP_AK_1(OCHIAI);
-		xmlSecurity_v2_RF_HD_2(OCHIAI);
-		xmlSecurity_v3_RF_HD_1(OCHIAI);
-		xmlSecurity_v3_XU_HD_2(OCHIAI);
+		//xmlSecurity_v3_XU_HD_2(OCHIAI);
 
 		makeBudgetsFB(OCHIAI,XML_SECURITY);
 		makeHeaderFB();
 		
-		xstream_v1_AM_AK_1(OCHIAI);
+		//xstream_v1_AM_AK_1(OCHIAI);
 
 		makeBudgetsFB(OCHIAI,XSTREAM);
 		makeBudgetsFB(OCHIAI,ALL_PROGRAMS);
@@ -506,12 +393,16 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	/*
 	 * Use for FixedBudget strategies
 	 * */
-	public void calculatePerformanceFixedBudget(XmlTestCriteria criteria,XmlMcpTestCriteria mcpCriteria, XmlBLReportFile blReportFile, MultipleFaultInfo multFaultInfo, String heuristic){
+	public void calculatePerformanceFixedBudget(XmlTestCriteria criteria,XmlMcpTestCriteria mcpCriteria, XmlBLReportFile blReportFile, FaultInfo faultInfo, String heuristic){
 		csvLineAbsBlocks = new ArrayList<String>();
 		csvLineAbsMethods = new ArrayList<String>();
-		csvLineAbsBlocks.add(multFaultInfo.getProgramName());
-		csvLineAbsBlocks.add(String.valueOf(multFaultInfo.getProgramVersion()));
-		csvLineAbsBlocks.add(multFaultInfo.getFaultName());
+		csvLineAbsBlocks.add(faultInfo.getProgramName());
+		csvLineAbsBlocks.add(String.valueOf(faultInfo.getProgramVersion()));
+		csvLineAbsBlocks.add(faultInfo.getFaultName());
+		csvLineAbsBlocks.add(faultInfo.getFaultyTag());
+		csvLineAbsBlocks.add(faultInfo.getFaultyClass());
+		csvLineAbsBlocks.add(faultInfo.getFaultyMethod());
+		csvLineAbsBlocks.add(String.valueOf(faultInfo.getFaultyBlock()));
 		csvLineAbsBlocks.add(heuristic);
 		csvLineAbsBlocks.add(String.valueOf(mcpCriteria.getMcpFaultyMethodScoreMax(faultInfo.getFaultyMethod())));
 		csvLineAbsBlocks.add(String.valueOf(criteria.getFaultyBlockScore()));
@@ -539,8 +430,8 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 			logFileList.addAll(InspectionStrategyDeltaBudget.logFileList);
 			InspectionStrategyDeltaBudget.clear();
 		}
-		generateLogFile(multFaultInfo,heuristic);
-		csvLineAbsBlocks.add(multFaultInfo.getFaultName());
+		generateLogFile(faultInfo,heuristic);
+		csvLineAbsBlocks.add(faultInfo.getFaultName());
 		csvLineAbsBlocks.addAll(csvLineAbsMethods);
 		csvLineAbsBlocks.add(String.valueOf(executedBlocks));
 		csvLineAbsBlocks.add(String.valueOf(executedMethods));
@@ -574,8 +465,8 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		executedBlocks = criteria.getTotalExecutedBlocks();
 		executedMethods = criteria.getTotalExecutedMethods();
 		
-		logFileList.add("########## Fault: "+faultInfo.getFaultName() + ", "+ heuristic  + ", program: "+ faultInfo.getProgramName() + ", v"+faultInfo.getProgramVersion() + ", block: " + faultInfo.getFaultyBlock(i)  + ", " + faultInfo.getFaultyMethod(i) + ", " + faultInfo.getFaultyClass(i));
-		System.out.println("Fault: "+faultInfo.getFaultName() + ", "+ heuristic  + ", program: "+ faultInfo.getProgramName() + ", v"+faultInfo.getProgramVersion() + ", block: " + faultInfo.getFaultyBlock(i)  + ", " + faultInfo.getFaultyMethod(i) + ", " + faultInfo.getFaultyClass(i));
+		logFileList.add("########## Fault: "+faultInfo.getFaultName() + ", "+ heuristic  + ", program: "+ faultInfo.getProgramName() + ", v"+faultInfo.getProgramVersion() + ", block: " + faultInfo.getFaultyBlock()  + ", " + faultInfo.getFaultyMethod() + ", " + faultInfo.getFaultyClass());
+		System.out.println("Fault: "+faultInfo.getFaultName() + ", "+ heuristic  + ", program: "+ faultInfo.getProgramName() + ", v"+faultInfo.getProgramVersion() + ", block: " + faultInfo.getFaultyBlock()  + ", " + faultInfo.getFaultyMethod() + ", " + faultInfo.getFaultyClass());
 		
 		calculatePerformanceFixedBudget(criteria,mcpCriteria,blReportFile,faultInfo,heuristic);
 		
@@ -609,12 +500,12 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	}
 	
 	public void ANT1_01(String heuristic){
-		MultipleFaultInfo multFaultInfo = new MultipleFaultInfo();
-		multFaultInfo.setFaultyPackage("org.apache.tools.ant");
-		multFaultInfo.setFaultyClass("org.apache.tools.ant.ProjectHelper");
-		multFaultInfo.setFaultyMethod("parse()");
-		multFaultInfo.setFaultyBlock(68);
-		faultAnalysis(multFaultInfo,heuristic);
+		FaultInfo faultInfo = new FaultInfo();
+		faultInfo.setFaultyPackage("org.apache.tools.ant");
+		faultInfo.setFaultyClass("org.apache.tools.ant.ProjectHelper");
+		faultInfo.setFaultyMethod("parse()");
+		faultInfo.setFaultyBlock(68);
+		faultAnalysis(faultInfo,heuristic);
 	}
 	
 	
@@ -642,6 +533,10 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		header.add("program");
 		header.add("v");
 		header.add("fault");
+		header.add("fault-id");
+		header.add("class");
+		header.add("method");
+		header.add("block");
 		header.add("heuristic");
 		header.add("score-mcp");
 		header.add("score-bl");
@@ -680,14 +575,14 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	
 	private void makeBudgetsFB(String heuristic, String programName){
 		List<String> rowBudget = new ArrayList<String>();
-		final int FIRST_BLANK_CELS = 6;
+		final int FIRST_BLANK_CELS = 10;
 		int effortMethodIndex = 0;
 		
 		//add a header for ALL_PROGRAMS
 		if(programName.equals(ALL_PROGRAMS)){
 			rowBudget.add("TOTAL");
-			for(int i = 1; i < ColumnIndexCHICD.DB_TOTAL_COLUMNS; i++){
-				if(i == ColumnIndexCHICD.HEURISTIC){
+			for(int i = 1; i < ColumnIndexCHICDMultipleFaults.DB_TOTAL_COLUMNS; i++){
+				if(i == ColumnIndexCHICDMultipleFaults.HEURISTIC){
 					rowBudget.add(heuristic);
 				}else{
 					rowBudget.add("");
@@ -732,7 +627,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 			rowBudget = new ArrayList<String>();
 		}
 		//blank line between the heuristics
-		for(int i = 0; i < ColumnIndexCHICD.DB_TOTAL_COLUMNS; i++){
+		for(int i = 0; i < ColumnIndexCHICDMultipleFaults.DB_TOTAL_COLUMNS; i++){
 			rowBudget.add("");
 		}
 		matrix.add(rowBudget);
@@ -743,9 +638,9 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	private List<String> sumEffortBudgetValuesPerBudget(String heuristic,int effortBudget, boolean blockEffort, String programName){
 		List<List<Integer>> effortMatrix;
 		if(blockEffort){
-			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICD.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICD.DB_ABS_BLOCKS_IDX_END,programName);
+			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_END,programName);
 		}else{
-			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICD.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICD.DB_ABS_METHODS_IDX_END,programName);
+			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_END,programName);
 		}
 		List<String> effortBudgetRow = new ArrayList<String>();
 		int effortOccurrences = 0;
@@ -767,11 +662,11 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		for(int i = firstColIndex; i <= lastColIndex; i++){
 			for(List<String> line : matrix){
 				if(programName.equals(ALL_PROGRAMS)){
-					if(line.get(ColumnIndexCHICD.HEURISTIC).equals(heuristic) && !line.get(ColumnIndexCHICD.PROGRAM).equals("TOTAL")){
+					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && !line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals("TOTAL")){
 						column.add(Integer.parseInt(line.get(i)));
 					}
 				}else{
-					if(line.get(ColumnIndexCHICD.HEURISTIC).equals(heuristic) && line.get(ColumnIndexCHICD.PROGRAM).equals(programName)){
+					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals(programName)){
 						column.add(Integer.parseInt(line.get(i)));
 					}
 				}
@@ -791,9 +686,9 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		int icdMhsColumnSize = 15;
 		
 		if(blockEffort){
-			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICD.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICD.DB_ABS_BLOCKS_IDX_END,programName);
+			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_END,programName);
 		}else{
-			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICD.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICD.DB_ABS_METHODS_IDX_END,programName);
+			effortMatrix = getEffortColumnsPerHeuristic(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_END,programName);
 			blIndex = -1;
 			mhsIndex = 15;
 		}
@@ -807,7 +702,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 			if(effortBudgetIndex < (icdIndex+icdMhsColumnSize)){
 				for(Integer effort : effortColumn){
 					if(!countedRows.contains(countRowIndex)){
-						if(effort <= effortBudget){
+						if(effort <= effortBudget){//one of the points to check the smaller, the larger, the 2nd, the 3rd, and the average
 							effortOccurrences++;
 							countedRows.add(countRowIndex);
 						}
@@ -868,8 +763,8 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		}
 	}
 	
-	public void generateLogFile(MultipleFaultInfo multFaultInfo,String heuristic){
-		File logFile = new File(PATHFILE+"ch-icd-fb-inspection-log_"+multFaultInfo.getProgramName()+"_"+multFaultInfo.getProgramVersion()+"_"+multFaultInfo.getFaultName()+"_"+heuristic+".txt");
+	public void generateLogFile(FaultInfo faultInfo,String heuristic){
+		File logFile = new File(PATHFILE+"ch-icd-fb-inspection-log_"+faultInfo.getProgramName()+"_"+faultInfo.getProgramVersion()+"_"+faultInfo.getFaultName()+"_"+heuristic+".txt");
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(logFile,false));
