@@ -59,8 +59,262 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	}
 	
 	public void execute(){
+		
 		makeHeaderFB();
 		
+		checkFaultPosition(OCHIAI,"ANT1_01",ANT,1,"CLJ_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.CommandlineJava","getCommandline()",7);
+		checkFaultPosition(OCHIAI,"ANT1_01",ANT,1,"PJH_AK_1","org.apache.tools.ant","org.apache.tools.ant.ProjectHelper","parse()",68);
+		
+		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"CDJ_AK_1","org.apache.tools.ant.types","org.apache.tools.ant.types.CommandlineJava","getCommandline()",42);
+		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"PH_HD_1","org.apache.tools.ant","org.apache.tools.ant.ProjectHelper$TargetHandler","startElement(String,AttributeList)",0);
+/*		
+		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_1","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",7);
+		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_2","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",92);
+		
+		checkFaultPosition(OCHIAI,"ANT4_01",ANT,4,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","isLegalCharacter(char)",20);
+		checkFaultPosition(OCHIAI,"ANT4_01",ANT,4,"EA_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.EnumeratedAttribute","setValue(String)",0);
+		checkFaultPosition(OCHIAI,"ANT4_02",ANT,4,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","isLegalCharacter(char)",20);
+		checkFaultPosition(OCHIAI,"ANT4_02",ANT,4,"FLU_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.FileUtils","getParentFile(File)",0);
+		checkFaultPosition(OCHIAI,"ANT4_03",ANT,4,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","isLegalCharacter(char)",20);
+		checkFaultPosition(OCHIAI,"ANT4_03",ANT,4,"SFS_HD_1","org.apache.tools.ant.util","org.apache.tools.ant.util.SourceFileScanner","restrict(String[],File,File,FileNameMapper)",113);
+		checkFaultPosition(OCHIAI,"ANT4_04",ANT,4,"EA_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.EnumeratedAttribute","setValue(String)",0);
+		checkFaultPosition(OCHIAI,"ANT4_04",ANT,4,"FLU_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.FileUtils","getParentFile(File)",0);
+		checkFaultPosition(OCHIAI,"ANT4_05",ANT,4,"EA_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.EnumeratedAttribute","setValue(String)",0);
+		checkFaultPosition(OCHIAI,"ANT4_05",ANT,4,"SFS_HD_1","org.apache.tools.ant.util","org.apache.tools.ant.util.SourceFileScanner","restrict(String[],File,File,FileNameMapper)",113);
+		checkFaultPosition(OCHIAI,"ANT4_06",ANT,4,"FLU_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.FileUtils","getParentFile(File)",0);
+		checkFaultPosition(OCHIAI,"ANT4_06",ANT,4,"SFS_HD_1","org.apache.tools.ant.util","org.apache.tools.ant.util.SourceFileScanner","restrict(String[],File,File,FileNameMapper)",113);
+		checkFaultPosition(OCHIAI,"ANT4_07",ANT,4,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","isLegalCharacter(char)",20);
+		checkFaultPosition(OCHIAI,"ANT4_07",ANT,4,"EA_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.EnumeratedAttribute","setValue(String)",0);
+		checkFaultPosition(OCHIAI,"ANT4_07",ANT,4,"FLU_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.FileUtils","getParentFile(File)",0);
+		checkFaultPosition(OCHIAI,"ANT4_07",ANT,4,"SFS_HD_1","org.apache.tools.ant.util","org.apache.tools.ant.util.SourceFileScanner","restrict(String[],File,File,FileNameMapper)",113);
+		
+		checkFaultPosition(OCHIAI,"ANT5_01",ANT,5,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","encodedata(String)",67);
+		checkFaultPosition(OCHIAI,"ANT5_01",ANT,5,"MNT_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.ManifestTask","execute()",41);
+		checkFaultPosition(OCHIAI,"ANT5_02",ANT,5,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","encodedata(String)",67);
+		checkFaultPosition(OCHIAI,"ANT5_02",ANT,5,"MST_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.Manifest","getDefaultManifest()",60);
+		checkFaultPosition(OCHIAI,"ANT5_03",ANT,5,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","encodedata(String)",67);
+		checkFaultPosition(OCHIAI,"ANT5_03",ANT,5,"PJ_HD_2","org.apache.tools.ant","org.apache.tools.ant.Project","addReference(String,Object)",31);
+		checkFaultPosition(OCHIAI,"ANT5_04",ANT,5,"MNT_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.ManifestTask","execute()",41);
+		checkFaultPosition(OCHIAI,"ANT5_04",ANT,5,"MST_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.Manifest","getDefaultManifest()",60);
+		checkFaultPosition(OCHIAI,"ANT5_05",ANT,5,"MNT_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.ManifestTask","execute()",41);
+		checkFaultPosition(OCHIAI,"ANT5_05",ANT,5,"PJ_HD_2","org.apache.tools.ant","org.apache.tools.ant.Project","addReference(String,Object)",31);
+		checkFaultPosition(OCHIAI,"ANT5_06",ANT,5,"MST_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.Manifest","getDefaultManifest()",60);
+		checkFaultPosition(OCHIAI,"ANT5_06",ANT,5,"PJ_HD_2","org.apache.tools.ant","org.apache.tools.ant.Project","addReference(String,Object)",31);
+		checkFaultPosition(OCHIAI,"ANT5_07",ANT,5,"DEW_AK_1","org.apache.tools.ant.util","org.apache.tools.ant.util.DOMElementWriter","encodedata(String)",67);
+		checkFaultPosition(OCHIAI,"ANT5_07",ANT,5,"MNT_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.ManifestTask","execute()",41);
+		checkFaultPosition(OCHIAI,"ANT5_07",ANT,5,"MST_AK_1","org.apache.tools.ant.taskdefs","org.apache.tools.ant.taskdefs.Manifest","getDefaultManifest()",60);
+		checkFaultPosition(OCHIAI,"ANT5_07",ANT,5,"PJ_HD_2","org.apache.tools.ant","org.apache.tools.ant.Project","addReference(String,Object)",31);
+		
+		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"ACL_HD_2","org.apache.tools.ant","org.apache.tools.ant.AntClassLoader","setClassPath(Path)",0);
+		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"SLU_AK_1","org.apache.tools.ant.types.selectors","org.apache.tools.ant.types.selectors.SelectorUtils","matchPath(String,String,boolean)",130);
+*/		
+		makeBudgetsFB(OCHIAI,ANT);
+		makeBudgetsFBMultipleFaults(OCHIAI,ANT,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,ANT,false);
+		
+		makeHeaderFB();
+/*				
+		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
+		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
+		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
+		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"M_AK_1","org.apache.commons.math.stat.descriptive.moment","org.apache.commons.math.stat.descriptive.moment.Mean","evaluate(double[],int,int)",10);
+		checkFaultPosition(OCHIAI,"CM1_02",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
+		checkFaultPosition(OCHIAI,"CM1_02",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
+		checkFaultPosition(OCHIAI,"CM1_02",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
+		checkFaultPosition(OCHIAI,"CM1_02",COMMONS_MATH,1,"VS_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.ValueServer","getNextReplay()",25);
+		checkFaultPosition(OCHIAI,"CM1_03",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
+		checkFaultPosition(OCHIAI,"CM1_03",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
+		checkFaultPosition(OCHIAI,"CM1_03",COMMONS_MATH,1,"M_AK_1","org.apache.commons.math.stat.descriptive.moment","org.apache.commons.math.stat.descriptive.moment.Mean","evaluate(double[],int,int)",10);
+		checkFaultPosition(OCHIAI,"CM1_03",COMMONS_MATH,1,"VS_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.ValueServer","getNextReplay()",25);
+		checkFaultPosition(OCHIAI,"CM1_04",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
+		checkFaultPosition(OCHIAI,"CM1_04",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
+		checkFaultPosition(OCHIAI,"CM1_04",COMMONS_MATH,1,"M_AK_1","org.apache.commons.math.stat.descriptive.moment","org.apache.commons.math.stat.descriptive.moment.Mean","evaluate(double[],int,int)",10);
+		checkFaultPosition(OCHIAI,"CM1_04",COMMONS_MATH,1,"VS_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.ValueServer","getNextReplay()",25);
+		checkFaultPosition(OCHIAI,"CM1_05",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
+		checkFaultPosition(OCHIAI,"CM1_05",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
+		checkFaultPosition(OCHIAI,"CM1_05",COMMONS_MATH,1,"M_AK_1","org.apache.commons.math.stat.descriptive.moment","org.apache.commons.math.stat.descriptive.moment.Mean","evaluate(double[],int,int)",10);
+		checkFaultPosition(OCHIAI,"CM1_05",COMMONS_MATH,1,"VS_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.ValueServer","getNextReplay()",25);
+		
+		checkFaultPosition(OCHIAI,"CM2_01",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_01",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_01",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
+		checkFaultPosition(OCHIAI,"CM2_01",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_02",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_02",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
+		checkFaultPosition(OCHIAI,"CM2_02",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
+		checkFaultPosition(OCHIAI,"CM2_02",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_03",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
+		checkFaultPosition(OCHIAI,"CM2_03",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
+		checkFaultPosition(OCHIAI,"CM2_03",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_03",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_04",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
+		checkFaultPosition(OCHIAI,"CM2_04",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_04",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_04",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_05",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_05",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_05",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_05",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_06",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_06",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
+		checkFaultPosition(OCHIAI,"CM2_06",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
+		checkFaultPosition(OCHIAI,"CM2_06",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_07",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_07",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_07",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
+		checkFaultPosition(OCHIAI,"CM2_07",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_08",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_08",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_08",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_08",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_09",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_09",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_09",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_09",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_10",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_10",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_10",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
+		checkFaultPosition(OCHIAI,"CM2_10",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_11",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_11",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_11",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_11",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
+		checkFaultPosition(OCHIAI,"CM2_12",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
+		checkFaultPosition(OCHIAI,"CM2_12",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
+		checkFaultPosition(OCHIAI,"CM2_12",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
+		checkFaultPosition(OCHIAI,"CM2_12",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_13",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_13",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
+		checkFaultPosition(OCHIAI,"CM2_13",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
+		checkFaultPosition(OCHIAI,"CM2_13",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_14",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
+		checkFaultPosition(OCHIAI,"CM2_14",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
+		checkFaultPosition(OCHIAI,"CM2_14",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
+		checkFaultPosition(OCHIAI,"CM2_14",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
+		checkFaultPosition(OCHIAI,"CM2_15",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
+		checkFaultPosition(OCHIAI,"CM2_15",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
+		checkFaultPosition(OCHIAI,"CM2_15",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
+		checkFaultPosition(OCHIAI,"CM2_15",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
+		checkFaultPosition(OCHIAI,"CM2_16",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
+		checkFaultPosition(OCHIAI,"CM2_16",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
+		checkFaultPosition(OCHIAI,"CM2_16",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
+		checkFaultPosition(OCHIAI,"CM2_16",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
+		
+		checkFaultPosition(OCHIAI,"CM3_01",COMMONS_MATH,3,"BS_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.BrentSolver","solve(UnivariateRealFunction,double,double,double)",109);
+		checkFaultPosition(OCHIAI,"CM3_01",COMMONS_MATH,3,"ERKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",727);
+		checkFaultPosition(OCHIAI,"CM3_02",COMMONS_MATH,3,"BS_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.BrentSolver","solve(UnivariateRealFunction,double,double,double)",109);
+		checkFaultPosition(OCHIAI,"CM3_02",COMMONS_MATH,3,"RKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",578);
+		checkFaultPosition(OCHIAI,"CM3_03",COMMONS_MATH,3,"ERKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",727);
+		checkFaultPosition(OCHIAI,"CM3_03",COMMONS_MATH,3,"RKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",578);
+		
+		makeBudgetsFB(OCHIAI,COMMONS_MATH);
+		makeBudgetsFBMultipleFaults(OCHIAI,COMMONS_MATH,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,COMMONS_MATH,false);
+		
+		makeHeaderFB();
+		
+		checkFaultPosition(OCHIAI,"HS2_01",HSQLDB,2,"EL_AK_1","org.hsqldb","org.hsqldb.ExpressionLogical","resolveTypesForComparison(Session,Expression)",840);
+		checkFaultPosition(OCHIAI,"HS2_01",HSQLDB,2,"QS_AK_1","org.hsqldb","org.hsqldb.QuerySpecification","setAggregateConditions(Session)",0);
+		checkFaultPosition(OCHIAI,"HS2_02",HSQLDB,2,"EL_AK_1","org.hsqldb","org.hsqldb.ExpressionLogical","resolveTypesForComparison(Session,Expression)",840);
+		checkFaultPosition(OCHIAI,"HS2_02",HSQLDB,2,"QS_AK_2","org.hsqldb","org.hsqldb.QuerySpecification","setDistinctConditions(Session)",123);
+		checkFaultPosition(OCHIAI,"HS2_03",HSQLDB,2,"QS_AK_1","org.hsqldb","org.hsqldb.QuerySpecification","setAggregateConditions(Session)",0);
+		checkFaultPosition(OCHIAI,"HS2_03",HSQLDB,2,"QS_AK_2","org.hsqldb","org.hsqldb.QuerySpecification","setDistinctConditions(Session)",123);
+		
+		makeBudgetsFB(OCHIAI,HSQLDB);
+		makeBudgetsFBMultipleFaults(OCHIAI,HSQLDB,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,HSQLDB,false);
+		
+		makeHeaderFB();
+				
+		checkFaultPosition(OCHIAI,"JT1_01",JTOPAS,1,"FAULT_5","de.susebox.java.util","de.susebox.java.util.AbstractTokenizer","isKeyword(int,int)",20);
+		checkFaultPosition(OCHIAI,"JT1_01",JTOPAS,1,"FAULT_6","de.susebox.java.util","de.susebox.java.util.AbstractTokenizer","test4Normal(Token)",82);
+		
+		makeBudgetsFB(OCHIAI,JTOPAS);
+		makeBudgetsFBMultipleFaults(OCHIAI,JTOPAS,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,JTOPAS,false);
+		
+		makeHeaderFB();
+		
+		checkFaultPosition(OCHIAI,"PMD3_01",PMD,3,"RV_AK_1","net.sourceforge.pmd","net.sourceforge.pmd.RuleViolation","RuleViolation(Rule,RuleContext,SimpleNode,String)",431);
+		checkFaultPosition(OCHIAI,"PMD3_01",PMD,3,"XMLR_AK_1","net.sourceforge.pmd.cpd","net.sourceforge.pmd.cpd.XMLRenderer","render(Iterator)",133);
+		
+		makeBudgetsFB(OCHIAI,PMD);
+		makeBudgetsFBMultipleFaults(OCHIAI,PMD,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,PMD,false);
+		
+		makeHeaderFB();
+		
+		checkFaultPosition(OCHIAI,"XML1_01",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
+		checkFaultPosition(OCHIAI,"XML1_01",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
+		checkFaultPosition(OCHIAI,"XML1_01",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
+		checkFaultPosition(OCHIAI,"XML1_01",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
+		checkFaultPosition(OCHIAI,"XML1_02",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
+		checkFaultPosition(OCHIAI,"XML1_02",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
+		checkFaultPosition(OCHIAI,"XML1_02",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
+		checkFaultPosition(OCHIAI,"XML1_02",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
+		checkFaultPosition(OCHIAI,"XML1_03",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
+		checkFaultPosition(OCHIAI,"XML1_03",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
+		checkFaultPosition(OCHIAI,"XML1_03",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
+		checkFaultPosition(OCHIAI,"XML1_03",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
+		checkFaultPosition(OCHIAI,"XML1_04",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
+		checkFaultPosition(OCHIAI,"XML1_04",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
+		checkFaultPosition(OCHIAI,"XML1_04",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
+		checkFaultPosition(OCHIAI,"XML1_04",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
+		checkFaultPosition(OCHIAI,"XML1_05",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
+		checkFaultPosition(OCHIAI,"XML1_05",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
+		checkFaultPosition(OCHIAI,"XML1_05",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
+		checkFaultPosition(OCHIAI,"XML1_05",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
+		
+		checkFaultPosition(OCHIAI,"XML2_01",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_01",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_01",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
+		checkFaultPosition(OCHIAI,"XML2_01",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
+		checkFaultPosition(OCHIAI,"XML2_02",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_02",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_02",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
+		checkFaultPosition(OCHIAI,"XML2_02",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_03",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_03",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_03",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
+		checkFaultPosition(OCHIAI,"XML2_03",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		checkFaultPosition(OCHIAI,"XML2_04",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_04",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_04",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
+		checkFaultPosition(OCHIAI,"XML2_04",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		checkFaultPosition(OCHIAI,"XML2_05",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_05",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_05",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_05",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		checkFaultPosition(OCHIAI,"XML2_06",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_06",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
+		checkFaultPosition(OCHIAI,"XML2_06",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
+		checkFaultPosition(OCHIAI,"XML2_06",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_07",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_07",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
+		checkFaultPosition(OCHIAI,"XML2_07",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_07",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		checkFaultPosition(OCHIAI,"XML2_08",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
+		checkFaultPosition(OCHIAI,"XML2_08",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
+		checkFaultPosition(OCHIAI,"XML2_08",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_08",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		checkFaultPosition(OCHIAI,"XML2_09",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
+		checkFaultPosition(OCHIAI,"XML2_09",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
+		checkFaultPosition(OCHIAI,"XML2_09",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
+		checkFaultPosition(OCHIAI,"XML2_09",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
+		
+		checkFaultPosition(OCHIAI,"XML3_01",XML_SECURITY,3,"RF_HD_1","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","getDigestValue()",0);
+		checkFaultPosition(OCHIAI,"XML3_01",XML_SECURITY,3,"XU_HD_2","org.apache.xml.security.utils","org.apache.xml.security.utils.XMLUtils","getOwnerDocument(Set)",18);
+		
+		makeBudgetsFB(OCHIAI,XML_SECURITY);
+		makeBudgetsFBMultipleFaults(OCHIAI,XML_SECURITY,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,XML_SECURITY,false);
+*/		
+		makeBudgetsFB(OCHIAI,ALL_PROGRAMS);
+		makeBudgetsFBMultipleFaults(OCHIAI,ALL_PROGRAMS,true);
+		makeBudgetsFBMultipleFaults(OCHIAI,ALL_PROGRAMS,false);
+/*		
+		
+		makeHeaderFB();
 		
 		checkFaultPosition(TARANTULA,"ANT1_01",ANT,1,"CLJ_HD_1","org.apache.tools.ant.types","org.apache.tools.ant.types.CommandlineJava","getCommandline()",7);
 		checkFaultPosition(TARANTULA,"ANT1_01",ANT,1,"PJH_AK_1","org.apache.tools.ant","org.apache.tools.ant.ProjectHelper","parse()",68);
@@ -108,7 +362,12 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		checkFaultPosition(TARANTULA,"ANT7_01",ANT,7,"ACL_HD_2","org.apache.tools.ant","org.apache.tools.ant.AntClassLoader","setClassPath(Path)",0);
 		checkFaultPosition(TARANTULA,"ANT7_01",ANT,7,"SLU_AK_1","org.apache.tools.ant.types.selectors","org.apache.tools.ant.types.selectors.SelectorUtils","matchPath(String,String,boolean)",130);
 		
+		makeBudgetsFB(TARANTULA,ANT);
+		makeBudgetsFBMultipleFaults(TARANTULA,ANT,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,ANT,false);
 		
+		makeHeaderFB();
+				
 		checkFaultPosition(TARANTULA,"CM1_01",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
 		checkFaultPosition(TARANTULA,"CM1_01",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
 		checkFaultPosition(TARANTULA,"CM1_01",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
@@ -134,177 +393,164 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		checkFaultPosition(TARANTULA,"CM2_01",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_01",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
 		checkFaultPosition(TARANTULA,"CM2_01",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_02",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_02",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
 		checkFaultPosition(TARANTULA,"CM2_02",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
 		checkFaultPosition(TARANTULA,"CM2_02",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
-		
 		checkFaultPosition(TARANTULA,"CM2_03",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
 		checkFaultPosition(TARANTULA,"CM2_03",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
 		checkFaultPosition(TARANTULA,"CM2_03",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_03",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
-		
 		checkFaultPosition(TARANTULA,"CM2_04",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
 		checkFaultPosition(TARANTULA,"CM2_04",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_04",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_04",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_05",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_05",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
 		checkFaultPosition(TARANTULA,"CM2_05",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_05",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
-		
 		checkFaultPosition(TARANTULA,"CM2_06",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
 		checkFaultPosition(TARANTULA,"CM2_06",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
 		checkFaultPosition(TARANTULA,"CM2_06",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
 		checkFaultPosition(TARANTULA,"CM2_06",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_07",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_07",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_07",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
 		checkFaultPosition(TARANTULA,"CM2_07",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_08",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_08",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_08",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
 		checkFaultPosition(TARANTULA,"CM2_08",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_09",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
 		checkFaultPosition(TARANTULA,"CM2_09",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_09",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_09",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_10",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
 		checkFaultPosition(TARANTULA,"CM2_10",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_10",COMMONS_MATH,2,"CRVG_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.CorrelatedRandomVectorGenerator","decompose(RealMatrix,double)",539);
 		checkFaultPosition(TARANTULA,"CM2_10",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
-		
 		checkFaultPosition(TARANTULA,"CM2_11",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
 		checkFaultPosition(TARANTULA,"CM2_11",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
 		checkFaultPosition(TARANTULA,"CM2_11",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_11",COMMONS_MATH,2,"URSU_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils","bracket(UnivariateRealFunction,double,double,double,int)",174);
-		
 		checkFaultPosition(TARANTULA,"CM2_12",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
 		checkFaultPosition(TARANTULA,"CM2_12",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
 		checkFaultPosition(TARANTULA,"CM2_12",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
 		checkFaultPosition(TARANTULA,"CM2_12",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
-		
 		checkFaultPosition(TARANTULA,"CM2_13",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
 		checkFaultPosition(TARANTULA,"CM2_13",COMMONS_MATH,2,"MU_AK_4","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficientLog(int,int)",66);
 		checkFaultPosition(TARANTULA,"CM2_13",COMMONS_MATH,2,"MU_AK_5","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",8);
 		checkFaultPosition(TARANTULA,"CM2_13",COMMONS_MATH,2,"MU_AK_6","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","equals(double,double,double)",0);
-		
 		checkFaultPosition(TARANTULA,"CM2_14",COMMONS_MATH,2,"AE_AK_1","org.apache.commons.math.estimation","org.apache.commons.math.estimation.AbstractEstimator","getCovariances(EstimationProblem)",0);
 		checkFaultPosition(TARANTULA,"CM2_14",COMMONS_MATH,2,"MU_AK_1","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","gcd(int,int)",0);
 		checkFaultPosition(TARANTULA,"CM2_14",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
 		checkFaultPosition(TARANTULA,"CM2_14",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
-		
 		checkFaultPosition(TARANTULA,"CM2_15",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
 		checkFaultPosition(TARANTULA,"CM2_15",COMMONS_MATH,2,"F_AK_2","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","compareTo(Fraction)",39);
 		checkFaultPosition(TARANTULA,"CM2_15",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
 		checkFaultPosition(TARANTULA,"CM2_15",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
-		
 		checkFaultPosition(TARANTULA,"CM2_16",COMMONS_MATH,2,"ABI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator","AdamsBashforthIntegrator(int,double,double,double,double)",0);
 		checkFaultPosition(TARANTULA,"CM2_16",COMMONS_MATH,2,"CDI_AK_1","org.apache.commons.math.linear","org.apache.commons.math.linear.CholeskyDecompositionImpl","CholeskyDecompositionImpl(RealMatrix,double,double)",207);
 		checkFaultPosition(TARANTULA,"CM2_16",COMMONS_MATH,2,"MU_AK_2","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","factorial(int)",26);
 		checkFaultPosition(TARANTULA,"CM2_16",COMMONS_MATH,2,"MU_AK_3","org.apache.commons.math.util","org.apache.commons.math.util.MathUtils","binomialCoefficient(int,int)",58);
 		
-			
 		checkFaultPosition(TARANTULA,"CM3_01",COMMONS_MATH,3,"BS_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.BrentSolver","solve(UnivariateRealFunction,double,double,double)",109);
 		checkFaultPosition(TARANTULA,"CM3_01",COMMONS_MATH,3,"ERKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",727);
-		
 		checkFaultPosition(TARANTULA,"CM3_02",COMMONS_MATH,3,"BS_AK_1","org.apache.commons.math.analysis.solvers","org.apache.commons.math.analysis.solvers.BrentSolver","solve(UnivariateRealFunction,double,double,double)",109);
 		checkFaultPosition(TARANTULA,"CM3_02",COMMONS_MATH,3,"RKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",578);
-		
 		checkFaultPosition(TARANTULA,"CM3_03",COMMONS_MATH,3,"ERKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",727);
 		checkFaultPosition(TARANTULA,"CM3_03",COMMONS_MATH,3,"RKI_AK_1","org.apache.commons.math.ode.nonstiff","org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator","integrate(FirstOrderDifferentialEquations,double,double[],double,double[])",578);
 		
-
+		makeBudgetsFB(TARANTULA,COMMONS_MATH);
+		makeBudgetsFBMultipleFaults(TARANTULA,COMMONS_MATH,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,COMMONS_MATH,false);
+		
+		makeHeaderFB();
+		
 		checkFaultPosition(TARANTULA,"HS2_01",HSQLDB,2,"EL_AK_1","org.hsqldb","org.hsqldb.ExpressionLogical","resolveTypesForComparison(Session,Expression)",840);
 		checkFaultPosition(TARANTULA,"HS2_01",HSQLDB,2,"QS_AK_1","org.hsqldb","org.hsqldb.QuerySpecification","setAggregateConditions(Session)",0);
-		
 		checkFaultPosition(TARANTULA,"HS2_02",HSQLDB,2,"EL_AK_1","org.hsqldb","org.hsqldb.ExpressionLogical","resolveTypesForComparison(Session,Expression)",840);
 		checkFaultPosition(TARANTULA,"HS2_02",HSQLDB,2,"QS_AK_2","org.hsqldb","org.hsqldb.QuerySpecification","setDistinctConditions(Session)",123);
-		
 		checkFaultPosition(TARANTULA,"HS2_03",HSQLDB,2,"QS_AK_1","org.hsqldb","org.hsqldb.QuerySpecification","setAggregateConditions(Session)",0);
 		checkFaultPosition(TARANTULA,"HS2_03",HSQLDB,2,"QS_AK_2","org.hsqldb","org.hsqldb.QuerySpecification","setDistinctConditions(Session)",123);
 		
+		makeBudgetsFB(TARANTULA,HSQLDB);
+		makeBudgetsFBMultipleFaults(TARANTULA,HSQLDB,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,HSQLDB,false);
 		
+		makeHeaderFB();
+				
 		checkFaultPosition(TARANTULA,"JT1_01",JTOPAS,1,"FAULT_5","de.susebox.java.util","de.susebox.java.util.AbstractTokenizer","isKeyword(int,int)",20);
 		checkFaultPosition(TARANTULA,"JT1_01",JTOPAS,1,"FAULT_6","de.susebox.java.util","de.susebox.java.util.AbstractTokenizer","test4Normal(Token)",82);
 		
+		makeBudgetsFB(TARANTULA,JTOPAS);
+		makeBudgetsFBMultipleFaults(TARANTULA,JTOPAS,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,JTOPAS,false);
+		
+		makeHeaderFB();
 		
 		checkFaultPosition(TARANTULA,"PMD3_01",PMD,3,"RV_AK_1","net.sourceforge.pmd","net.sourceforge.pmd.RuleViolation","RuleViolation(Rule,RuleContext,SimpleNode,String)",431);
 		checkFaultPosition(TARANTULA,"PMD3_01",PMD,3,"XMLR_AK_1","net.sourceforge.pmd.cpd","net.sourceforge.pmd.cpd.XMLRenderer","render(Iterator)",133);
 		
+		makeBudgetsFB(TARANTULA,PMD);
+		makeBudgetsFBMultipleFaults(TARANTULA,PMD,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,PMD,false);
+		
+		makeHeaderFB();
 		
 		checkFaultPosition(TARANTULA,"XML1_01",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
 		checkFaultPosition(TARANTULA,"XML1_01",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
 		checkFaultPosition(TARANTULA,"XML1_01",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
 		checkFaultPosition(TARANTULA,"XML1_01",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
-		
 		checkFaultPosition(TARANTULA,"XML1_02",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
 		checkFaultPosition(TARANTULA,"XML1_02",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
 		checkFaultPosition(TARANTULA,"XML1_02",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
 		checkFaultPosition(TARANTULA,"XML1_02",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
-		
 		checkFaultPosition(TARANTULA,"XML1_03",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
 		checkFaultPosition(TARANTULA,"XML1_03",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
 		checkFaultPosition(TARANTULA,"XML1_03",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
 		checkFaultPosition(TARANTULA,"XML1_03",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
-		
 		checkFaultPosition(TARANTULA,"XML1_04",XML_SECURITY,1,"CE_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","updateInscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",302);
 		checkFaultPosition(TARANTULA,"XML1_04",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
 		checkFaultPosition(TARANTULA,"XML1_04",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
 		checkFaultPosition(TARANTULA,"XML1_04",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
-		
 		checkFaultPosition(TARANTULA,"XML1_05",XML_SECURITY,1,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","namespaceIsAbsolute(String)",42);
 		checkFaultPosition(TARANTULA,"XML1_05",XML_SECURITY,1,"CN2_AK_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315","updateinscopeNamespacesAndReturnVisibleAttrs(Element,Map,Map)",322);
 		checkFaultPosition(TARANTULA,"XML1_05",XML_SECURITY,1,"CNC_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","XMLSignatureInput(Node,CachedXPathAPI)",0);
 		checkFaultPosition(TARANTULA,"XML1_05",XML_SECURITY,1,"XSI_AK_1","org.apache.xml.security.signature","org.apache.xml.security.signature.XMLSignatureInput","getNodeSet()",38);
 		
-		
 		checkFaultPosition(TARANTULA,"XML2_01",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_01",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_01",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
 		checkFaultPosition(TARANTULA,"XML2_01",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
-			
 		checkFaultPosition(TARANTULA,"XML2_02",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_02",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_02",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
 		checkFaultPosition(TARANTULA,"XML2_02",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
-		
 		checkFaultPosition(TARANTULA,"XML2_03",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_03",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_03",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
 		checkFaultPosition(TARANTULA,"XML2_03",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
-			
 		checkFaultPosition(TARANTULA,"XML2_04",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_04",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_04",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
 		checkFaultPosition(TARANTULA,"XML2_04",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
-		
 		checkFaultPosition(TARANTULA,"XML2_05",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_05",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_05",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
 		checkFaultPosition(TARANTULA,"XML2_05",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
-		
 		checkFaultPosition(TARANTULA,"XML2_06",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_06",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
 		checkFaultPosition(TARANTULA,"XML2_06",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
 		checkFaultPosition(TARANTULA,"XML2_06",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
-		
 		checkFaultPosition(TARANTULA,"XML2_07",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_07",XML_SECURITY,2,"CB_HD_3","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","outputPItoWriter(ProcessingInstruction)",87);
 		checkFaultPosition(TARANTULA,"XML2_07",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
 		checkFaultPosition(TARANTULA,"XML2_07",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
-		
 		checkFaultPosition(TARANTULA,"XML2_08",XML_SECURITY,2,"C2E_AK_1","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.Canonicalizer20010315Excl","handleAttributes(Element)",1732);
 		checkFaultPosition(TARANTULA,"XML2_08",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
 		checkFaultPosition(TARANTULA,"XML2_08",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
 		checkFaultPosition(TARANTULA,"XML2_08",XML_SECURITY,2,"RF_HD_2","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","dereferenceURIandPerformTransforms()",0);
-		
 		checkFaultPosition(TARANTULA,"XML2_09",XML_SECURITY,2,"CB_HD_2","org.apache.xml.security.c14n.implementations","org.apache.xml.security.c14n.implementations.CanonicalizerBase","getPositionRelativeToDocumentElement(Node)",56);
 		checkFaultPosition(TARANTULA,"XML2_09",XML_SECURITY,2,"CH_HD_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",63);
 		checkFaultPosition(TARANTULA,"XML2_09",XML_SECURITY,2,"CHP_AK_1","org.apache.xml.security.c14n.helper","org.apache.xml.security.c14n.helper.C14nHelper","sortAttributes(Object[])",159);
@@ -313,76 +559,15 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		checkFaultPosition(TARANTULA,"XML3_01",XML_SECURITY,3,"RF_HD_1","org.apache.xml.security.signature","org.apache.xml.security.signature.Reference","getDigestValue()",0);
 		checkFaultPosition(TARANTULA,"XML3_01",XML_SECURITY,3,"XU_HD_2","org.apache.xml.security.utils","org.apache.xml.security.utils.XMLUtils","getOwnerDocument(Set)",18);
 		
-		makeBudgetsFB(TARANTULA,ANT);
-		makeHeaderFB();
-		
-		//commonsMath_v3_RKI_AK_1(TARANTULA);
-		
-		makeBudgetsFB(TARANTULA,COMMONS_MATH);
-		makeHeaderFB();
-		
-		//hsqldb_v2_QS_AK_2(TARANTULA);
-		
-		makeBudgetsFB(TARANTULA,HSQLDB);
-		makeHeaderFB();
-		
-		//jtopas_v2_FAULT_1(TARANTULA);
-		
-		makeBudgetsFB(TARANTULA,JTOPAS);
-		makeHeaderFB();
-		
-		//pmd_v3_XMLR_AK_1(TARANTULA);
-
-		makeBudgetsFB(TARANTULA,PMD);
-		makeHeaderFB();
-		
-		//xmlSecurity_v3_XU_HD_2(TARANTULA);
-
 		makeBudgetsFB(TARANTULA,XML_SECURITY);
-		makeHeaderFB();
+		makeBudgetsFBMultipleFaults(TARANTULA,XML_SECURITY,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,XML_SECURITY,false);
 		
-		//xstream_v1_AM_AK_1(TARANTULA);
-
-		makeBudgetsFB(TARANTULA,XSTREAM);
 		makeBudgetsFB(TARANTULA,ALL_PROGRAMS);
-		makeHeaderFB();
-		
-				
-		//ant_v8_ZF_HD_1(OCHIAI);
-		
-		makeBudgetsFB(OCHIAI,ANT);
-		makeHeaderFB();
-		
-		//commonsMath_v3_RKI_AK_1(OCHIAI);
+		makeBudgetsFBMultipleFaults(TARANTULA,ALL_PROGRAMS,true);
+		makeBudgetsFBMultipleFaults(TARANTULA,ALL_PROGRAMS,false);
 
-		makeBudgetsFB(OCHIAI,COMMONS_MATH);
-		makeHeaderFB();
-		
-		//hsqldb_v2_QS_AK_2(OCHIAI);
-
-		makeBudgetsFB(OCHIAI,HSQLDB);
-		makeHeaderFB();
-		
-		//jtopas_v2_FAULT_1(OCHIAI);
-		
-		makeBudgetsFB(OCHIAI,JTOPAS);
-		makeHeaderFB();
-		
-		//pmd_v3_XMLR_AK_1(OCHIAI);
-
-		makeBudgetsFB(OCHIAI,PMD);
-		makeHeaderFB();
-		
-		//xmlSecurity_v3_XU_HD_2(OCHIAI);
-
-		makeBudgetsFB(OCHIAI,XML_SECURITY);
-		makeHeaderFB();
-		
-		//xstream_v1_AM_AK_1(OCHIAI);
-
-		makeBudgetsFB(OCHIAI,XSTREAM);
-		makeBudgetsFB(OCHIAI,ALL_PROGRAMS);
-				
+	*/
 		generateCSVFile();
 		
 		//generateCharts();
@@ -448,7 +633,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		XmlTestCriteria criteria = reader.readCodeHierarchyXmlFile(fileCH);
 		criteria.updateMethodList();
 		criteria.setFaultyInfo(faultInfo);
-		criteria.markAsMultipleFault();
+		criteria.markAsFault();
 		XmlMcpTestCriteria mcpCriteria = reader.readMcpXmlFile(fileMcp);
 		mcpCriteria.updateMcpMethodList();
 		mcpCriteria.createRoadmap();
@@ -460,7 +645,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 			blcriteria.updateBLMethodList();
 		}
 		blReportFile.setFaultInfo(faultInfo);
-		blReportFile.markAsMultipleFault();
+		blReportFile.markAsFault();
 		
 		executedBlocks = criteria.getTotalExecutedBlocks();
 		executedMethods = criteria.getTotalExecutedMethods();
@@ -487,33 +672,6 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		faultAnalysis(faultInfo,heuristic);
 	}
 
-	public void ANT1_00(String heuristic){
-		FaultInfo faultInfo = new FaultInfo();
-		faultInfo.setFaultName("");
-		faultInfo.setProgramName(ANT);
-		faultInfo.setProgramVersion(1);
-		faultInfo.setFaultyPackage("");
-		faultInfo.setFaultyClass("");
-		faultInfo.setFaultyMethod("");
-		faultInfo.setFaultyBlock(0);
-		faultAnalysis(faultInfo,heuristic);
-	}
-	
-	public void ANT1_01(String heuristic){
-		FaultInfo faultInfo = new FaultInfo();
-		faultInfo.setFaultyPackage("org.apache.tools.ant");
-		faultInfo.setFaultyClass("org.apache.tools.ant.ProjectHelper");
-		faultInfo.setFaultyMethod("parse()");
-		faultInfo.setFaultyBlock(68);
-		faultAnalysis(faultInfo,heuristic);
-	}
-	
-	
-	
-	
-	
-	
-	
 	public byte[] export() throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		CsvWriter csv = new CsvWriter(new OutputStreamWriter(baos));
@@ -526,7 +684,6 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		csv.close();
 		return baos.toByteArray();
 	}
-	
 	
 	private void makeHeaderFB(){
 		List<String> header = new ArrayList<String>();
@@ -634,6 +791,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		rowBudget = new ArrayList<String>();
 	}
 	
+	
 	//blockEffort: true for blocks and false for methods
 	private List<String> sumEffortBudgetValuesPerBudget(String heuristic,int effortBudget, boolean blockEffort, String programName){
 		List<List<Integer>> effortMatrix;
@@ -656,6 +814,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		return effortBudgetRow;
 	}
 	
+	
 	private List<List<Integer>> getEffortColumnsPerHeuristic(String heuristic,int firstColIndex, int lastColIndex, String programName){
 		List<List<Integer>> effortColumns = new ArrayList<List<Integer>>();
 		List<Integer> column = new ArrayList<Integer>();
@@ -676,6 +835,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		}
 		return effortColumns;
 	}
+	
 	
 	//for DeltaBudget
 	private List<String> sumEffortBudgetDB(String heuristic,int effortBudget, boolean blockEffort, String programName){
@@ -750,7 +910,242 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		effortOccurrences = 0;
 		return effortBudgetRow;
 	}
+	
+
+	///////////////////MULTIPLE FAULTS
+	
+	//best: true for best ranked fault and false for worst ranked
+	private void makeBudgetsFBMultipleFaults(String heuristic, String programName, boolean best){
+		List<String> rowBudget = new ArrayList<String>();
+		final int FIRST_BLANK_CELS = 10;
+		int effortMethodIndex = 0;
+		
+		//add a header for ALL_PROGRAMS
+		if(programName.equals(ALL_PROGRAMS)){
+			rowBudget.add("TOTAL");
+			for(int i = 1; i < ColumnIndexCHICDMultipleFaults.DB_TOTAL_COLUMNS; i++){
+				if(i == ColumnIndexCHICDMultipleFaults.HEURISTIC){
+					rowBudget.add(heuristic);
+				}else{
+					rowBudget.add("");
+				}
+			}
+			matrix.add(rowBudget);
+			rowBudget = new ArrayList<String>();
+			makeHeaderFB();
+		}
+		
+		//block absolute budgets
+		for(int budget : FIXED_BUDGET_RANGES){
+			rowBudget.add("budget 1 - "+budget);
+			for(int i = 0; i < FIRST_BLANK_CELS; i++){
+				//add a header to identify the strategy: best or worst
+				if(budget==FIXED_BUDGET_RANGES[0] && i==0 && best){
+					rowBudget.add("best");
+				}
+				else if(budget==FIXED_BUDGET_RANGES[0] && i==0 && !best){
+					rowBudget.add("worst");
+				}else{
+					rowBudget.add("");
+				}
+			}
+			//delta budget summaries
+			List<String> budgetAbsDB = sumEffortBudgetDBMultipleFaults(heuristic, budget,true,programName,best);
+			for(String bud : budgetAbsDB){
+				rowBudget.add(bud);
+			}
+			//effort values for blocks, methods, and percentuals
+			List<String> budgetValues = sumEffortBudgetValuesPerBudgetMultipleFaults(heuristic, budget,true,programName,best);
+			for(String bud : budgetValues){
+				rowBudget.add(bud);
+			}
 			
+			rowBudget.add("met-budget "+((FB_METHOD_EFFORT_BUDGET_RANGES[effortMethodIndex]==INFINITE) ? "30+" : FB_METHOD_EFFORT_BUDGET_RANGES[effortMethodIndex]));
+				
+			List<String> methodBudgetValues = sumEffortBudgetValuesPerBudgetMultipleFaults(heuristic, FB_METHOD_EFFORT_BUDGET_RANGES[effortMethodIndex],false,programName,best);
+			for(String metBud : methodBudgetValues){
+				rowBudget.add(metBud);
+			}
+			//total of executed blocks and methods
+			rowBudget.add("");
+			rowBudget.add("");
+			
+			effortMethodIndex++;
+			
+			matrix.add(rowBudget);
+			rowBudget = new ArrayList<String>();
+		}
+		//blank line between the heuristics
+		for(int i = 0; i < ColumnIndexCHICDMultipleFaults.DB_TOTAL_COLUMNS; i++){
+			rowBudget.add("");
+		}
+		matrix.add(rowBudget);
+		rowBudget = new ArrayList<String>();
+	}
+		
+	//blockEffort: true for blocks and false for methods
+	//best: true for best ranked fault and false for worst ranked
+	private List<String> sumEffortBudgetValuesPerBudgetMultipleFaults(String heuristic,int effortBudget, boolean blockEffort, String programName, boolean best){
+		List<List<Integer>> effortMatrix;
+		if(blockEffort){
+			effortMatrix = getEffortColumnsPerHeuristicMultipleFaults(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_END,programName,best);
+		}else{
+			effortMatrix = getEffortColumnsPerHeuristicMultipleFaults(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_END,programName,best);
+		}
+		List<String> effortBudgetRow = new ArrayList<String>();
+		int effortOccurrences = 0;
+		for(List<Integer> effortColumn : effortMatrix){
+			for(Integer effort : effortColumn){
+				if(effort <= effortBudget){
+					effortOccurrences++;
+				}
+			}
+			effortBudgetRow.add(String.valueOf(effortOccurrences));
+			effortOccurrences = 0;
+		}
+		return effortBudgetRow;
+	}
+		
+	//for DeltaBudget
+	private List<String> sumEffortBudgetDBMultipleFaults(String heuristic,int effortBudget, boolean blockEffort, String programName, boolean best){
+		List<List<Integer>> effortMatrix;
+		int icdIndex = 0;
+		int blIndex = 15;
+		int mhsIndex = 16;
+		int icdMhsColumnSize = 15;
+		
+		if(blockEffort){
+			effortMatrix = getEffortColumnsPerHeuristicMultipleFaults(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_BLOCKS_IDX_END,programName,best);
+		}else{
+			effortMatrix = getEffortColumnsPerHeuristicMultipleFaults(heuristic,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_BEGIN,ColumnIndexCHICDMultipleFaults.DB_ABS_METHODS_IDX_END,programName,best);
+			blIndex = -1;
+			mhsIndex = 15;
+		}
+		List<String> effortBudgetRow = new ArrayList<String>();
+		List<Integer> countedRows = new ArrayList<Integer>();
+		int countRowIndex = 0;
+		int effortOccurrences = 0;
+		int effortBudgetIndex = 0;
+		for(List<Integer> effortColumn : effortMatrix){
+			countRowIndex = 0;
+			if(effortBudgetIndex < (icdIndex+icdMhsColumnSize)){
+				for(Integer effort : effortColumn){
+					if(!countedRows.contains(countRowIndex)){
+						if(effort <= effortBudget){//one of the points to check the smaller, the larger, the 2nd, the 3rd, and the average
+							effortOccurrences++;
+							countedRows.add(countRowIndex);
+						}
+					}
+					countRowIndex++;
+				}
+				
+			}
+			else if(effortBudgetIndex == blIndex){
+				//storing results from ich
+				effortBudgetRow.add(String.valueOf(effortOccurrences));
+				effortOccurrences = 0;
+				//reseting from ich before using ch
+				countedRows.clear();
+				
+				for(Integer effort : effortColumn){
+					if(effort <= effortBudget){
+						effortOccurrences++;
+					}
+				}
+				effortBudgetRow.add(String.valueOf(effortOccurrences));
+				effortOccurrences = 0;
+			}else if(effortBudgetIndex >= mhsIndex && effortBudgetIndex < (mhsIndex+icdMhsColumnSize)){
+				//storing results and reseting from ich before using ch when not passing on bl 
+				if(blIndex == -1){
+					effortBudgetRow.add(String.valueOf(effortOccurrences));
+					effortOccurrences = 0;
+					countedRows.clear();
+				}
+				for(Integer effort : effortColumn){
+					if(!countedRows.contains(countRowIndex)){
+						if(effort <= effortBudget){
+							effortOccurrences++;
+							countedRows.add(countRowIndex);
+						}
+					}
+					countRowIndex++;
+				}
+				
+			}
+			effortBudgetIndex++;
+		}
+		effortBudgetRow.add(String.valueOf(effortOccurrences));
+		effortOccurrences = 0;
+		return effortBudgetRow;
+	}
+	
+	private List<List<Integer>> getEffortColumnsPerHeuristicMultipleFaults(String heuristic,int firstColIndex, int lastColIndex, String programName, boolean best){
+		List<List<Integer>> effortColumns = new ArrayList<List<Integer>>();
+		List<Integer> column = new ArrayList<Integer>();
+		List<Integer> columnTemp = new ArrayList<Integer>();
+		String currentFault = "";
+		for(int i = firstColIndex; i <= lastColIndex; i++){
+			for(List<String> line : matrix){
+				if(programName.equals(ALL_PROGRAMS)){
+					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && !line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals("TOTAL")){
+						column.add(Integer.parseInt(line.get(i)));
+					}
+				}else{
+					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals(programName)){
+						if(currentFault.isEmpty()){
+							currentFault = line.get(ColumnIndexCHICDMultipleFaults.FAULT);
+						}
+						if(currentFault.equals(line.get(ColumnIndexCHICDMultipleFaults.FAULT))){
+							columnTemp.add(Integer.parseInt(line.get(i)));
+						}else{
+							if(best){
+								column.add(getBestRankedFault(columnTemp));
+							}else{
+								column.add(getWorstRankedFault(columnTemp));
+							}
+							columnTemp.clear();
+							columnTemp.add(Integer.parseInt(line.get(i)));
+							currentFault = line.get(ColumnIndexCHICDMultipleFaults.FAULT);
+						}
+					}
+				}
+				//when it is the last line of a fault version
+				if(!line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && !currentFault.isEmpty()){
+					if(best){
+						column.add(getBestRankedFault(columnTemp));
+					}else{
+						column.add(getWorstRankedFault(columnTemp));
+					}
+					columnTemp.clear();
+					currentFault = "";
+				}
+			}
+			effortColumns.add(column);
+			column = new ArrayList<Integer>();
+		}
+		return effortColumns;
+	}
+	
+	public int getBestRankedFault(List<Integer> rankingList){
+		int best = 1000000000;
+		for(int position : rankingList){
+			if(position < best){
+				best = position;
+			}
+		}
+		return best;
+	}
+	
+	
+	public int getWorstRankedFault(List<Integer> rankingList){
+		int worst = 0;
+		for(int position : rankingList){
+			if(position > worst){
+				worst = position;
+			}
+		}
+		return worst;
+	}
 	
 	
 	public void generateCSVFile(){

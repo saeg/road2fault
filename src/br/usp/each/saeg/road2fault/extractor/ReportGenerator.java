@@ -5,28 +5,32 @@ import java.io.File;
 public class ReportGenerator {
 	
 	public static void main(String[] args) {
+		BatchExecutorFixedBudgetMultipleFaults batch = new BatchExecutorFixedBudgetMultipleFaults("/home/higor/data/r2f/reports-mf/");
+		batch.execute();
 		
-		try{
+/*		try{
 			if(isDirValid(args[0])){
 				String dirPath = args[0];
 				
 				//BatchExecutorFixedBudget batch = new BatchExecutorFixedBudget("/home/higor/data/r2f/reports/");
-				BatchExecutorFixedBudget batch = new BatchExecutorFixedBudget(dirPath);
+				//BatchExecutorFixedBudget batch = new BatchExecutorFixedBudget(dirPath);
+				BatchExecutorFixedBudgetMultipleFaults batch = new BatchExecutorFixedBudgetMultipleFaults("/home/higor/data/r2f/reports-mf/");
 				
 				//BatchExecutorLevelScore batch = new BatchExecutorLevelScore("/home/higor/data/r2f/reports/");
 				//BatchExecutorLevelScore batch = new BatchExecutorLevelScore(dirPath);
 				batch.execute();
-				
+*/				
 				/*final ChartGenerator demo = new ChartGenerator("Chart Demo");
 		        demo.pack();
 		        RefineryUtilities.centerFrameOnScreen(demo);
 		        demo.setVisible(true);*/
-			}else{
+/*			}else{
 				System.out.println("Dir path is incorrect or it doesn't contain the right structure");
 			}
 		}catch(IndexOutOfBoundsException ex){
 			System.out.println("Path argument not found!");
 		}
+*/
 	}
 
 	private static boolean isDirValid(String strDir) {
