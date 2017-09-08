@@ -912,7 +912,21 @@ public class BatchExecutorLevelScoreMultipleFaults {
 			for(List<String> line : matrix){
 				if(programName.equals(ALL_PROGRAMS)){
 					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && !line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals("TOTAL")){
-						column.add(Integer.parseInt(line.get(i)));
+						if(currentFault.isEmpty()){
+							currentFault = line.get(ColumnIndexCHICDMultipleFaults.FAULT);
+						}
+						if(currentFault.equals(line.get(ColumnIndexCHICDMultipleFaults.FAULT))){
+							columnTemp.add(Integer.parseInt(line.get(i)));
+						}else{
+							if(best){
+								column.add(getBestRankedFault(columnTemp));
+							}else{
+								column.add(getWorstRankedFault(columnTemp));
+							}
+							columnTemp.clear();
+							columnTemp.add(Integer.parseInt(line.get(i)));
+							currentFault = line.get(ColumnIndexCHICDMultipleFaults.FAULT);
+						}
 					}
 				}else{
 					if(line.get(ColumnIndexCHICDMultipleFaults.HEURISTIC).equals(heuristic) && line.get(ColumnIndexCHICDMultipleFaults.PROGRAM).equals(programName)){
@@ -1172,7 +1186,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		return columnList;
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try{
 			if(isDirValid(args[0])){
 				String dirPath = args[0];
@@ -1188,8 +1202,13 @@ public class BatchExecutorLevelScoreMultipleFaults {
 			System.out.println("Path argument not found!");
 		}
 
-	}
+	}*/
 
+	public static void main(String[] args) {
+		BatchExecutorLevelScoreMultipleFaults batch = new BatchExecutorLevelScoreMultipleFaults("/home/higor/data/r2f/reports-mf/");
+		batch.execute();
+	}
+	
 	private static boolean isDirValid(String strDir) {
 		if(strDir == null || strDir.isEmpty()){
 			return false;
