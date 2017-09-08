@@ -14,7 +14,6 @@ public class XmlBLReportFile {
 			private List<XmlBLTestCriteria> blockListTestCriteriaList = new ArrayList<XmlBLTestCriteria>();
 			private String heuristic;
 			private FaultInfo faultInfo;
-			private MultipleFaultInfo multipleFaultInfo;
 			
 			@XmlAttribute
 			public String getProject() {
@@ -51,10 +50,6 @@ public class XmlBLReportFile {
 				this.faultInfo = faultInfo;
 			}
 			
-			public void setMultipleFaultyInfo(MultipleFaultInfo faultyInfo) {
-				this.multipleFaultInfo = faultyInfo;
-			}
-			
 			public void markAsFault(){
 				for(XmlBLTestCriteria blCriteria : blockListTestCriteriaList){
 					for(XmlBLBlock block : blCriteria.getBLBlockList()){
@@ -68,18 +63,4 @@ public class XmlBLReportFile {
 				}
 			}
 			
-			public void markAsMultipleFault(){
-				for(XmlBLTestCriteria blCriteria : blockListTestCriteriaList){
-					for(XmlBLBlock block : blCriteria.getBLBlockList()){
-						for(int i = 0; i < multipleFaultInfo.getNumberOfFaults();i++){
-							if(block.getClassName().equals(multipleFaultInfo.getFaultyClass(i)) && 
-									block.getMethodName().equals(multipleFaultInfo.getFaultyMethod(i)) && 
-									block.getBlockId() == multipleFaultInfo.getFaultyBlock(i)){
-								System.out.println("fault block : "+block.getMethodName());
-								block.setFault();
-							}
-						}
-					}
-				}
-			}
 }

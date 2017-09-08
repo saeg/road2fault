@@ -14,7 +14,6 @@ public class XmlMcpTestCriteria {
 	private List<XmlMcp> mcpMethodList = new ArrayList<XmlMcp>();
 	private List<McpMethod> roadmap = new ArrayList<McpMethod>();
 	private FaultInfo faultInfo;
-	private MultipleFaultInfo multipleFaultInfo;
 	
 	public void setRoadmap(List<McpMethod> roadmap) {
 		this.roadmap = roadmap;
@@ -97,10 +96,6 @@ public class XmlMcpTestCriteria {
 		this.faultInfo = faultInfo;
 	}
 	
-	public void setMultipleFaultyInfo(MultipleFaultInfo faultyInfo) {
-		this.multipleFaultInfo = faultyInfo;
-	}
-	
 	public void markAsFault(){
 		for(McpMethod method : roadmap){
 			if(faultInfo.getFaultyMethod().equals(method.getName())){
@@ -109,16 +104,6 @@ public class XmlMcpTestCriteria {
 		}
 	}
 	
-	public void markAsMultipleFault(){
-		for(McpMethod method : roadmap){
-			for(int i = 0; i < multipleFaultInfo.getNumberOfFaults();i++){
-				if(multipleFaultInfo.getFaultyMethod(i).equals(method.getName())){
-					method.setFault();
-				}
-			}
-		}
-	}
-
 	public void markAsFaultSignatureClass(){
 		for(McpMethod method : roadmap){
 			if(faultInfo.getFaultyMethod().equals(method.getName()) && faultInfo.getFaultyClass().equals(method.getClassName())){

@@ -18,7 +18,6 @@ import com.generationjava.io.CsvWriter;
 
 import br.usp.each.saeg.road2fault.extractor.ChartGenerator.ChartType;
 import br.usp.each.saeg.road2fault.extractor.model.FaultInfo;
-import br.usp.each.saeg.road2fault.extractor.model.MultipleFaultInfo;
 import br.usp.each.saeg.road2fault.extractor.model.XmlBLReportFile;
 import br.usp.each.saeg.road2fault.extractor.model.XmlBLTestCriteria;
 import br.usp.each.saeg.road2fault.extractor.model.XmlMcpTestCriteria;
@@ -67,7 +66,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		
 		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"CDJ_AK_1","org.apache.tools.ant.types","org.apache.tools.ant.types.CommandlineJava","getCommandline()",42);
 		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"PH_HD_1","org.apache.tools.ant","org.apache.tools.ant.ProjectHelper$TargetHandler","startElement(String,AttributeList)",0);
-/*		
+		
 		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_1","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",7);
 		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_2","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",92);
 		
@@ -107,13 +106,13 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		
 		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"ACL_HD_2","org.apache.tools.ant","org.apache.tools.ant.AntClassLoader","setClassPath(Path)",0);
 		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"SLU_AK_1","org.apache.tools.ant.types.selectors","org.apache.tools.ant.types.selectors.SelectorUtils","matchPath(String,String,boolean)",130);
-*/		
+		
 		makeBudgetsFB(OCHIAI,ANT);
 		makeBudgetsFBMultipleFaults(OCHIAI,ANT,true);
 		makeBudgetsFBMultipleFaults(OCHIAI,ANT,false);
 		
 		makeHeaderFB();
-/*				
+				
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
@@ -308,11 +307,11 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		makeBudgetsFB(OCHIAI,XML_SECURITY);
 		makeBudgetsFBMultipleFaults(OCHIAI,XML_SECURITY,true);
 		makeBudgetsFBMultipleFaults(OCHIAI,XML_SECURITY,false);
-*/		
+		
 		makeBudgetsFB(OCHIAI,ALL_PROGRAMS);
 		makeBudgetsFBMultipleFaults(OCHIAI,ALL_PROGRAMS,true);
 		makeBudgetsFBMultipleFaults(OCHIAI,ALL_PROGRAMS,false);
-/*		
+		
 		
 		makeHeaderFB();
 		
@@ -567,7 +566,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		makeBudgetsFBMultipleFaults(TARANTULA,ALL_PROGRAMS,true);
 		makeBudgetsFBMultipleFaults(TARANTULA,ALL_PROGRAMS,false);
 
-	*/
+	
 		generateCSVFile();
 		
 		//generateCharts();
@@ -1148,7 +1147,7 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 	
 	public void generateCSVFile(){
 		try {
- 			OutputStream os = new FileOutputStream(new File(PATHFILE+"ch-icd-output-fb.csv"));
+ 			OutputStream os = new FileOutputStream(new File(PATHFILE+"ch-icd-output-fb-mult.csv"));
             os.write(export());
             os.close();
 	 	} catch (IOException e) {
@@ -1268,4 +1267,35 @@ public class BatchExecutorFixedBudgetMultipleFaults {
 		generateDeltaBudgetEffectivenessCharts(heuristic,ALL_PROGRAMS,strategy);
 	}
 
+	
+	public static void main(String[] args) {
+		try{
+			if(isDirValid(args[0])){
+				String dirPath = args[0];
+				
+				//BatchExecutorFixedBudgetMultipleFaults batch = new BatchExecutorFixedBudgetMultipleFaults("/home/higor/data/r2f/reports-mf/");
+				BatchExecutorFixedBudgetMultipleFaults batch = new BatchExecutorFixedBudgetMultipleFaults(dirPath);
+				batch.execute();
+				
+			}else{
+				System.out.println("Dir path is incorrect or it doesn't contain the right structure");
+			}
+		}catch(IndexOutOfBoundsException ex){
+			System.out.println("Path argument not found!");
+		}
+
+	}
+
+	private static boolean isDirValid(String strDir) {
+		if(strDir == null || strDir.isEmpty()){
+			return false;
+		}
+		File dir = new File(strDir);
+		if(!dir.exists() || !dir.isDirectory()){
+			return false;
+		}
+		return true;
+	}
+
+	
 }

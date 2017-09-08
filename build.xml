@@ -39,6 +39,10 @@
 	<property name="file.road2fault.mcp" value="${dir.road2fault.files}/road2fault_mcp" />
 	<property name="file.road2fault.mct" value="${dir.road2fault.files}/road2fault_mct" />
 	<property name="file.road2fault.rmcp" value="${dir.road2fault.files}/road2fault_rmcp" />
+	<property name="file.road2fault.fb" value="${dir.road2fault.files}/r2f_fb" />
+	<property name="file.road2fault.fb.mult" value="${dir.road2fault.files}/r2f_fb_mult" />
+	<property name="file.road2fault.ls" value="${dir.road2fault.files}/r2f_ls" />
+	<property name="file.road2fault.ls.mult" value="${dir.road2fault.files}/r2f_ls_mult" />
 	<property name="file.road2fault.jar" value="road2fault.jar"/>
 	
 	<!--Targets-->
@@ -80,6 +84,10 @@
 		<copy file="${file.road2fault.mcp}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 		<copy file="${file.road2fault.mct}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 		<copy file="${file.road2fault.rmcp}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.fb}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.fb.mult}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.ls}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
+		<copy file="${file.road2fault.ls.mult}" todir="${dir.road2fault.build.bin}" overwrite="true"/>
 	</target>
 	
 	<target name="compile-road2fault" depends="make-dir" description="Compiling Road2Fault">

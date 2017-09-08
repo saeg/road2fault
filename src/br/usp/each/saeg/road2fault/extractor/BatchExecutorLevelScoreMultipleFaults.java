@@ -68,7 +68,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		
 		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"CDJ_AK_1","org.apache.tools.ant.types","org.apache.tools.ant.types.CommandlineJava","getCommandline()",42);
 		checkFaultPosition(OCHIAI,"ANT2_01",ANT,2,"PH_HD_1","org.apache.tools.ant","org.apache.tools.ant.ProjectHelper$TargetHandler","startElement(String,AttributeList)",0);
-/*		
+		
 		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_1","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",7);
 		checkFaultPosition(OCHIAI,"ANT3_01",ANT,3,"TG_HD_2","org.apache.tools.ant","org.apache.tools.ant.Target","setDepends(String)",92);
 		
@@ -108,13 +108,13 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		
 		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"ACL_HD_2","org.apache.tools.ant","org.apache.tools.ant.AntClassLoader","setClassPath(Path)",0);
 		checkFaultPosition(OCHIAI,"ANT7_01",ANT,7,"SLU_AK_1","org.apache.tools.ant.types.selectors","org.apache.tools.ant.types.selectors.SelectorUtils","matchPath(String,String,boolean)",130);
-*/		
+		
 		makeBudgets(OCHIAI,ANT);
 		makeBudgetsMultipleFaults(OCHIAI,ANT,true);
 		makeBudgetsMultipleFaults(OCHIAI,ANT,false);
 		
 		makeHeader();
-/*				
+				
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"C_AK_1","org.apache.commons.math.complex","org.apache.commons.math.complex.Complex","multiply(Complex)",18);
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"EDI_AK_1","org.apache.commons.math.random","org.apache.commons.math.random.EmpiricalDistributionImpl","load(URL)",51);
 		checkFaultPosition(OCHIAI,"CM1_01",COMMONS_MATH,1,"F_AK_1","org.apache.commons.math.fraction","org.apache.commons.math.fraction.Fraction","Fraction(double,double,int,int)",0);
@@ -309,11 +309,11 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		makeBudgets(OCHIAI,XML_SECURITY);
 		makeBudgetsMultipleFaults(OCHIAI,XML_SECURITY,true);
 		makeBudgetsMultipleFaults(OCHIAI,XML_SECURITY,false);
-*/		
+		
 		makeBudgets(OCHIAI,ALL_PROGRAMS);
 		makeBudgetsMultipleFaults(OCHIAI,ALL_PROGRAMS,true);
 		makeBudgetsMultipleFaults(OCHIAI,ALL_PROGRAMS,false);
-/*		
+		
 		
 		makeHeader();
 		
@@ -568,7 +568,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		makeBudgetsMultipleFaults(TARANTULA,ALL_PROGRAMS,true);
 		makeBudgetsMultipleFaults(TARANTULA,ALL_PROGRAMS,false);
 
-	*/
+
 		generateCSVFile();
 		
 		//generateCharts();
@@ -582,6 +582,10 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		csvLineAbsBlocks.add(faultInfo.getProgramName());
 		csvLineAbsBlocks.add(String.valueOf(faultInfo.getProgramVersion()));
 		csvLineAbsBlocks.add(faultInfo.getFaultName());
+		csvLineAbsBlocks.add(faultInfo.getFaultyTag());
+		csvLineAbsBlocks.add(faultInfo.getFaultyClass());
+		csvLineAbsBlocks.add(faultInfo.getFaultyMethod());
+		csvLineAbsBlocks.add(String.valueOf(faultInfo.getFaultyBlock()));
 		csvLineAbsBlocks.add(heuristic);
 		csvLineAbsBlocks.add(String.valueOf(mcpCriteria.getMcpFaultyMethodScoreMax(faultInfo.getFaultyMethod())));
 		csvLineAbsBlocks.add(String.valueOf(criteria.getFaultyBlockScore()));
@@ -969,7 +973,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 	
 	public void generateCSVFile(){
 		try {
- 			OutputStream os = new FileOutputStream(new File(PATHFILE+"ch-icd-output-ls.csv"));
+ 			OutputStream os = new FileOutputStream(new File(PATHFILE+"ch-icd-output-ls-mult.csv"));
             os.write(export());
             os.close();
 	 	} catch (IOException e) {
@@ -1168,4 +1172,33 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		return columnList;
 	}
 	
+	public static void main(String[] args) {
+		try{
+			if(isDirValid(args[0])){
+				String dirPath = args[0];
+				
+				//BatchExecutorLevelScoreMultipleFaults batch = new BatchExecutorLevelScoreMultipleFaults("/home/higor/data/r2f/reports-mf/");
+				BatchExecutorLevelScoreMultipleFaults batch = new BatchExecutorLevelScoreMultipleFaults(dirPath);
+				batch.execute();
+				
+			}else{
+				System.out.println("Dir path is incorrect or it doesn't contain the right structure");
+			}
+		}catch(IndexOutOfBoundsException ex){
+			System.out.println("Path argument not found!");
+		}
+
+	}
+
+	private static boolean isDirValid(String strDir) {
+		if(strDir == null || strDir.isEmpty()){
+			return false;
+		}
+		File dir = new File(strDir);
+		if(!dir.exists() || !dir.isDirectory()){
+			return false;
+		}
+		return true;
+	}
+
 }
