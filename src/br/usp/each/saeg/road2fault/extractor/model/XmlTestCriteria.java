@@ -66,7 +66,9 @@ public class XmlTestCriteria {
 		XmlMethod method = clz.getMethodByName(faultInfo.getFaultyMethod());
 		method.setFault();
 		XmlBlock block = method.getBlockById(faultInfo.getFaultyBlock());
-		block.setFault();
+		if(block != null){
+			block.setFault();
+		}
 		
 	}
 	
@@ -86,6 +88,9 @@ public class XmlTestCriteria {
 		XmlClass clz = pkg.getClassByName(faultInfo.getFaultyClass());
 		XmlMethod method = clz.getMethodByName(faultInfo.getFaultyMethod());
 		XmlBlock block = method.getBlockById(faultInfo.getFaultyBlock());
+		if(block == null){
+			return 0.0;
+		}
 		return block.getScore();
 	}
 	
