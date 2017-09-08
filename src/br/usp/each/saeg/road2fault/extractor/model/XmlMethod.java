@@ -127,8 +127,11 @@ public class XmlMethod  implements Comparable<XmlMethod> {
 				if(otherMethod.id < this.id){
 					compare = -1;
 				}
-				else{
+				else if(otherMethod.id > this.id){
 					compare = 1;
+				}
+				else{
+					compare = 0;
 				}
 			}
 		}
