@@ -491,7 +491,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 	
 	
 	public void generateLogFile(FaultInfo faultInfo,String heuristic){
-		File logFile = new File(PATHFILE+"ch-icd-ls-inspection-log_"+faultInfo.getProgramName()+"_"+faultInfo.getProgramVersion()+"_"+faultInfo.getFaultName()+"_"+heuristic+".txt");
+		File logFile = new File(PATHFILE+"ch-icd-ls-inspection-log_"+faultInfo.getProgramName()+"_"+faultInfo.getProgramVersion()+"_"+faultInfo.getFaultName()+"_"+faultInfo.getFaultyTag()+"_"+heuristic+".txt");
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(logFile,false));
@@ -697,7 +697,7 @@ public class BatchExecutorLevelScoreMultipleFaults {
 		}
 
 	}
-
+	
 	private static boolean isDirValid(String strDir) {
 		if(strDir == null || strDir.isEmpty()){
 			return false;
