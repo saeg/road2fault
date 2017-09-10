@@ -121,7 +121,7 @@ public class InspectionStrategyDeltaBudget {
 		double deltaBudget = 0;
 		for(XmlBLTestCriteria blCriteria : blReportFile.getBLTestCriteriaList()){
 			numberOfBlocks += blCriteria.getBLBlockList().size();
-			if(numberOfBlocks < budget){
+			if(numberOfBlocks <= budget){
 				deltaBudget = blCriteria.getScore();
 			}else{
 				if(deltaBudget == 0){
