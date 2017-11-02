@@ -207,9 +207,9 @@ once in the roadmap, no matter their signatures or classes. The score precision 
 # Experiment's data and results
 
 ## Dataset 
-We use 62 bugs in our experiments from the following projects. For the multiple-fault versions we combined these faults, creating 62 versions, 25 with 2 faults and 37 with 4 faults.  
+We use 62 bugs in our experiments from the following projects. For the multiple-fault versions we combined these bugs, creating 62 versions, 25 with 2 faults and 37 with 4 faults.  
 
-| Project | # Faults (Single faults) | # Faults (2 faults) | # Faults (4 faults) | # Faults (All multiple faults) |
+| Project | # Single faults | # Two faults | # Four faults | # Two and four faults |
 |---------|---------|---------|---------|---------:|
 | Ant | 18 | 16 | 2 | 18 |
 | Commons-Math | 20 | 3 | 21 | 24 | 
@@ -226,7 +226,7 @@ These latter ones are available [here](https://drive.google.com/open?id=0B2Vc3U9
 
 ## Scripts
 
-The scripts we used in the experiments for single-fault versions are available [here](https://drive.google.com/open?id=0B2Vc3U9nBKO_MUpXU1c3TWFSUW8). For multiple-fault versions are available [here](https://www.dropbox.com/s/us5kwwcd74dh6i2/scripts-mf.tar.gz?dl=0).
+The scripts we used in the experiments for single-fault versions are available [here](https://drive.google.com/open?id=0B2Vc3U9nBKO_MUpXU1c3TWFSUW8). For multiple-fault versions, the scripts are available [here](https://www.dropbox.com/s/us5kwwcd74dh6i2/scripts-mf.tar.gz?dl=0).
 
 ## Results
 
