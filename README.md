@@ -35,12 +35,12 @@ sudo chmod +x ${ROAD2FAULT_HOME}/bin/*
 
 1. set the InSS root folder.
 ```bash
-export MIS_HOME=/home/user/apps/mis-mcp/build/mis
+export INSS_HOME=/home/user/apps/mis-mcp/build/mis
 ```
 
 2. Instrument the faulty program.
 ```bash
-${MIS_HOME}/bin/instrumenter --instrument ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/instrument/
+${INSS_HOME}/bin/instrumenter --instrument ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/instrument/
 ```
 **--instrument**: program's class folder
 
@@ -48,7 +48,7 @@ ${MIS_HOME}/bin/instrumenter --instrument ${PROGRAM_DIR}/target/classes/ --dest 
 
 3. Generate the program's data-flow graph.
 ```bash
-${MIS_HOME}/bin/defuse --file ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/gxl/
+${INSS_HOME}/bin/defuse --file ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DIR}/gxl/
 ```
 **--file**: program's class folder
 
@@ -57,10 +57,10 @@ ${MIS_HOME}/bin/defuse --file ${PROGRAM_DIR}/target/classes/ --dest ${PROGRAM_DI
 
 ## Collecting spectra
 
-1. Set the CLASSPATH, including the instrumented classes, test classes, junit library, inss libraries (in ${MIS_HOME}/libs folder), and other libraries and folders from which the faulty program depends.
+1. Set the CLASSPATH, including the instrumented classes, test classes, junit library, inss libraries (in ${INSS_HOME}/libs folder), and other libraries and folders from which the faulty program depends.
 ```bash
 LIBS=
-for i in `ls $MIS_HOME/libs/*.jar`
+for i in `ls $INSS_HOME/libs/*.jar`
 do
   LIBS=${LIBS}:${i}
 done
